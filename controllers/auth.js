@@ -1,5 +1,7 @@
 const passport = require("passport");
 const validator = require("validator");
+const crypto = require('crypto')
+const iv = crypto.randomBytes(16);
 const User = require("../models/User");
 
 exports.getLogin = (req, res) => {
@@ -65,6 +67,46 @@ exports.getSignup = (req, res) => {
   });
 };
 
+exports.putUser = async (req, res) => { 
+
+  function encrypt(text, secretKey) {
+    if (!text || text == undefined || text == null || text == '') { return text };
+    if (text.startsWith('{"iv":')) { return text };
+    const cipher = crypto.createCipheriv('aes-256-ctr', secretKey, iv);
+    const encrypted = Buffer.concat([cipher.update(text), cipher.final()]);
+    return JSON.stringify({
+        iv: iv.toString('hex'),
+        content: encrypted.toString('hex')
+    });
+  };
+
+  const filter = {_id: req.params.userID}
+  const update = {
+    mail: encrypt(req.body.mail, process.env.SECRET_KEY),
+    name: encrypt(req.body.name, process.env.SECRET_KEY),
+    title: encrypt(req.body.title, process.env.SECRET_KEY),
+    phone: encrypt(req.body.phone, process.env.SECRET_KEY),
+    discord: encrypt(req.body.discord, process.env.SECRET_KEY),
+    twitter: encrypt(req.body.twitter, process.env.SECRET_KEY),
+    linkedIn: encrypt(req.body.linkedIn, process.env.SECRET_KEY),
+    facebook: encrypt(req.body.facebook, process.env.SECRET_KEY),
+    website: encrypt(req.body.website, process.env.SECRET_KEY),
+    github: encrypt(req.body.github, process.env.SECRET_KEY),
+    city: encrypt(req.body.city, process.env.SECRET_KEY),
+    state: encrypt(req.body.state, process.env.SECRET_KEY)
+    // skills: req.body.skills
+  }
+
+  try {
+    let user = await User.findOneAndUpdate(filter, update, {returnOriginal: false});
+    console.log("Likes +1");
+    res.redirect('/settings');
+  } catch (err) {
+    console.log(err);
+  }
+
+}
+
 exports.postSignup = (req, res, next) => {
   const validationErrors = [];
   if (!validator.isEmail(req.body.email))
@@ -88,6 +130,8 @@ exports.postSignup = (req, res, next) => {
     userName: req.body.userName,
     email: req.body.email,
     password: req.body.password,
+    // remove after test
+    twitter: '@Test'
   });
 
   User.findOne(
