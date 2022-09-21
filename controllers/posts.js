@@ -2,9 +2,116 @@ const cloudinary = require("../middleware/cloudinary");
 const crypto = require("crypto")
 const Post = require("../models/Post");
 const User = require("../models/User")
+const Kairde = require("../models/Kairde")
 const Comment = require("../models/Comment");
 
 module.exports = {
+  getContactTool: async (req, res) => {
+    //decryption function -----change to a module to import
+    async function decrypt(hash, secretKey) {
+      try {
+          if (!hash || hash == undefined || hash == null || hash == '' || hash == "") {
+              return hash
+          };
+          // if (!hash.startsWith('{"iv":')) { return resolve(hash) };
+          hash = JSON.parse(hash);
+          const decipher = await crypto.createDecipheriv('aes-256-ctr', secretKey, Buffer.from(hash.iv, 'hex'));
+          const decrypted = await Buffer.concat([decipher.update(Buffer.from(hash.content, 'hex')), decipher.final()]);
+          return decrypted.toString();
+      } catch (error) {
+          return error
+      }
+    };
+
+    try {
+      const tool = 'contact'
+      const posts = await Post.find({ user: req.user.id });
+      // console.log(req.user._id)
+      //returns an array, so use x[0].whatever
+      const userInfo = await User.find({_id: req.user.id})
+      //-=-=-=-=-=-//USE THIS AS MODEL TO DECRYPT ALL DATA//-=-=-=-=-=-=-=-//
+      userInfo[0].twitter = await decrypt(userInfo[0].twitter, process.env.SECRET_KEY)
+
+      // console.log('userInfo: ', userInfo[0]._id)
+      res.render("toolView.ejs", { tool: tool, posts: posts, user: req.user, userInfo: userInfo[0]});
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  getBioTool: async (req, res) => {
+    //decryption function -----change to a module to import
+    async function decrypt(hash, secretKey) {
+      try {
+          if (!hash || hash == undefined || hash == null || hash == '' || hash == "") {
+              return hash
+          };
+          // if (!hash.startsWith('{"iv":')) { return resolve(hash) };
+          hash = JSON.parse(hash);
+          const decipher = await crypto.createDecipheriv('aes-256-ctr', secretKey, Buffer.from(hash.iv, 'hex'));
+          const decrypted = await Buffer.concat([decipher.update(Buffer.from(hash.content, 'hex')), decipher.final()]);
+          return decrypted.toString();
+      } catch (error) {
+          return error
+      }
+    };
+
+    try {
+      const tool = 'bio'
+      const posts = await Post.find({ user: req.user.id });
+      // console.log(req.user._id)
+      //returns an array, so use x[0].whatever
+      const userInfo = await User.find({_id: req.user.id})
+      //-=-=-=-=-=-//USE THIS AS MODEL TO DECRYPT ALL DATA//-=-=-=-=-=-=-=-//
+      userInfo[0].twitter = await decrypt(userInfo[0].twitter, process.env.SECRET_KEY)
+
+      // console.log('userInfo: ', userInfo[0]._id)
+      res.render("toolView.ejs", { tool: tool, posts: posts, user: req.user, userInfo: userInfo[0]});
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  getResumeTool: async (req, res) => {
+    //decryption function -----change to a module to import
+    async function decrypt(hash, secretKey) {
+      try {
+          if (!hash || hash == undefined || hash == null || hash == '' || hash == "") {
+              return hash
+          };
+          // if (!hash.startsWith('{"iv":')) { return resolve(hash) };
+          hash = JSON.parse(hash);
+          const decipher = await crypto.createDecipheriv('aes-256-ctr', secretKey, Buffer.from(hash.iv, 'hex'));
+          const decrypted = await Buffer.concat([decipher.update(Buffer.from(hash.content, 'hex')), decipher.final()]);
+          return decrypted.toString();
+      } catch (error) {
+          return error
+      }
+    };
+
+    try {
+      const tool = 'resume'
+      const posts = await Post.find({ user: req.user.id });
+      // console.log(req.user._id)
+      //returns an array, so use x[0].whatever
+      const userInfo = await User.find({_id: req.user.id})
+      //-=-=-=-=-=-//USE THIS AS MODEL TO DECRYPT ALL DATA//-=-=-=-=-=-=-=-//
+      userInfo[0].twitter = await decrypt(userInfo[0].twitter, process.env.SECRET_KEY)
+
+      // console.log('userInfo: ', userInfo[0]._id)
+      res.render("toolView.ejs", { tool: tool, posts: posts, user: req.user, userInfo: userInfo[0]});
+    } catch (err) {
+      console.log(err);
+    }
+  },
+
+  getMyKairdes: async (req, res) => {
+    try {
+      const posts = await Kairde.find({ createdBy: req.user.id }).sort({ createdAt: 'descending'}).lean();
+      res.render("feed.ejs", { user: req.user, posts: posts });
+    } catch (err) {
+      console.log(err);
+    }
+  },
+
   getProfile: async (req, res) => {
     //decryption function -----change to a module to import
     async function decrypt(hash, secretKey) {
