@@ -237,10 +237,10 @@ function convertCanvasToImage() {
     // img.appendChild(image)
 	//return image;
 }
-function downloadDefault() {
-    let anchor = document.createElement("a");
-    let img = document.getElementById('resizedImage')
-    anchor.href = img.src
-    anchor.download = "IMAGE.jpg";
-    anchor.click();
-}
+// function downloadDefault() {
+//     let anchor = document.createElement("a");
+//     let img = document.getElementById('resizedImage')
+//     anchor.href = img.src
+//     anchor.download = "IMAGE.jpg";
+//     anchor.click();
+// }
