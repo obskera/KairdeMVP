@@ -12,16 +12,16 @@
                 <!-- <a href="#" class="nav-item nav-link">Tools</a> -->
                 <%if (typeof user != 'undefined') { %>
                 <!-- <a href="/profile" class="nav-item nav-link">Profile</a> -->
-                <a href="/profile" class="nav-item nav-link active">Profile</a>
-                <a href="/settings" class="nav-item nav-link" tabindex="-1">My Info</a>
+                <a href="/profile" class="nav-item active navButton">Profile</a>
+                <a href="/settings" class="nav-item active navButton" tabindex="-1">My Info</a>
                 <%}%>
             </div>
             <div class="navbar-nav ms-auto">
                 <%if (typeof user == 'undefined') { %>
-                <a href="/signup" class="nav-item nav-link">Register</a>
-                <a href="/login" class="nav-item nav-link">Login</a>
+                <a href="/signup" class="nav-item navButton">Register</a>
+                <a href="/login" class="nav-item navButton">Login</a>
                 <% } else { %>
-                    <a href="/logout" class="nav-item nav-link">Logout</a>
+                    <a href="/logout" class="nav-item navButton">Logout</a>
                 <% }%>
             </div>
         </div>

@@ -56,4 +56,123 @@ body{
     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.7); 
     margin: 2%;
 }
-
+.navButton{
+    /* margin-left: 1%; */
+    border-radius: 25px;
+    border: 2px solid #73AD21;
+    padding: 10px;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.7); 
+    /* margin: 2%;
+    width: 105%; */
+    color: black;
+    text-decoration: none;
+    cursor: auto; 
+}
+.navButton:hover {
+    border-radius: 25px;
+    border: 2px solid #73AD21;
+    padding: 10px;
+    /* box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.7);  */
+    /* margin: 2%;
+    width: 105%; */
+    color: rgb(137, 175, 105);
+    text-decoration: none;
+    cursor: auto; 
+}
+.myButton {
+    border-radius: 25px;
+    border: 2px solid #73AD21;
+    padding: 10px;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.7); 
+    /* margin: 2%;
+    width: 105%; */
+    color: white;
+    text-decoration: none;
+    cursor: auto; 
+}
+.myButton:hover {
+    border-radius: 25px;
+    border: 2px solid #73AD21;
+    padding: 10px;
+    /* box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.7);  */
+    /* margin: 2%;
+    width: 105%; */
+    color: rgb(137, 175, 105);
+    text-decoration: none;
+    cursor: auto; 
+}
+.myButtonSecondary {
+    border-radius: 25px;
+    border: 2px solid #73AD21;
+    padding: 10px;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.7); 
+    /* margin: 2%;
+    width: 105%; */
+    color: rgb(146, 91, 105);
+    text-decoration: none;
+    cursor: auto; 
+}
+.myButtonSecondary:hover {
+    border-radius: 25px;
+    border: 2px solid #73AD21;
+    padding: 10px;
+    /* box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.7);  */
+    /* margin: 2%;
+    width: 105%; */
+    color: rgb(137, 175, 105) !important;
+    text-decoration: none;
+    cursor: auto; 
+}
+.myForm{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    /* max-width: 40%; */
+}
+#myCanvas{
+    border: 2px solid #73AD21;
+    padding: 10px;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.7); 
+    /* margin: 2%;
+    width: 105%; */
+    color: rgb(137, 175, 105);
+    text-decoration: none;
+    cursor: auto; 
+    margin-bottom: 2%;
+    width: 336px;
+    height: 192px;
+}
+.canvasPreview{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.canvasControls{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.spaced{
+    margin: 5%;
+}
+.plusMinus *{
+    font-size: 1.3rem;
+    /* margin-top: 18px; */
+    color:#5d8d1b;
+    text-decoration: none;
+}
+.plusMinus *:hover{
+    color:white;
+}
+.controlBox{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.myRadio{
+    border: 3px solid #5d8d1b;
+    padding: 5px;
+    margin-top: 10px;
+}

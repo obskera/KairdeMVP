@@ -1,12 +1,84 @@
 <div class="row">
     <div class="col">
-      1 of 2
+      <div class="myFormContainer">
+        <form action="#/" class="myForm box">
+          <label for="name">Name</label>
+          <input type="text" name="name" id="name">
+          <div class="controlBox">
+            <div class="plusMinus">
+              <a href="#/" id="nameMinus">[-]</a>
+              <a href="#/" id="namePlus">[+]</a>
+            </div>
+            <div class="justifyControls">
+              <a href="#/" class="btn myRadio" id="nameLeft">Left</a>
+              <a href="#/" class="btn myRadio" id="nameCenter">Center</a>
+              <a href="#/" class="btn myRadio" id="nameRight">Right</a>
+            </div>
+          </div>
+          
+
+          <label for="title">Title</label>
+          <input type="text" name="title" id="title">
+
+          <div class="controlBox">
+            <div class="plusMinus">
+              <a href="#/" id="titleMinus">[-]</a>
+              <a href="#/" id="titlePlus">[+]</a>
+            </div>
+            <div class="justifyControls">
+              <a href="#/" class="btn myRadio" id="titleLeft">Left</a>
+              <a href="#/" class="btn myRadio" id="titleCenter">Center</a>
+              <a href="#/" class="btn myRadio" id="titleRight">Right</a>
+            </div>
+          </div>
+       
+
+          <label for="phone">Phone</label>
+          <input type="text" name="phone" id="phone">
+          <div class="controlBox">
+            <div class="plusMinus">
+              <a href="#/" id="phoneMinus">[-]</a>
+              <a href="#/" id="phonePlus">[+]</a>
+            </div>
+            <div class="justifyControls">
+              <a href="#/" class="btn myRadio" id="phoneLeft">Left</a>
+              <a href="#/" class="btn myRadio" id="phoneCenter">Center</a>
+              <a href="#/" class="btn myRadio" id="phoneRight">Right</a>
+            </div>
+          </div>
+
+          <label for="email">Email</label>
+          <input type="text" name="email" id="email">
+          <div class="controlBox">
+            <div class="plusMinus">
+              <a href="#/" id="emailMinus">[-]</a>
+              <a href="#/" id="emailPlus">[+]</a>
+            </div>
+            <div class="justifyControls">
+              <a href="#/" class="btn myRadio" id="emailLeft">Left</a>
+              <a href="#/" class="btn myRadio" id="emailCenter">Center</a>
+              <a href="#/" class="btn myRadio" id="emailRight">Right</a>
+            </div>
+          </div>
+          
+
+          <a href="#/" class="btn btn-primary myButton spaced" id="preview">Preview</a>
+        </form>
+      </div>
     </div>
-    <div class="col">
-      2 of 2
+
+    <div class="col canvasPreview">
+      <canvas id="myCanvas" width="1050" height="600"></canvas>
+      <div class="canvasControls">
+        <a href="#/" class="btn btn-primary myButton spaced">Download Low Res.</a>
+        <a href="#/" class="btn btn-secondary myButtonSecondary spaced" id="downloadHighRes">Download High Res.</a>
+        <a href="#/" class="btn btn-primary myButton spaced">Save to My Account</a>
+      </div>
     </div>
   </div>
-  <div class="row">
+
+  <script src="../js/contactKairde.js"></script>
+  <!-- <div class="row">
     <div class="col">
       1 of 3
     </div>
@@ -16,4 +88,4 @@
     <div class="col">
       3 of 3
     </div>
-  </div>
+  </div> -->
