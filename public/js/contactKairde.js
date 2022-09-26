@@ -237,6 +237,29 @@ function convertCanvasToImage() {
     // img.appendChild(image)
 	//return image;
 }
+
+async function postKairde() {
+    renderPreview()
+    const canvas = document.querySelector('canvas')
+	// var image = new Image();
+	const dataUrl = canvas.toDataURL("image/png");
+
+    let data = {
+        dataURL: dataUrl,
+        caption: 'Made with Kairde Contact',
+        tool: 'contact'
+    };
+    fetch("/post/saveKairde", {
+    method: "POST",
+    headers: {'Content-Type': 'application/json'}, 
+    body: JSON.stringify(data)
+    }).then(res => {
+    console.log("Request complete! response:", res);
+    alert('Change this later: Kairde saved!')
+    });
+}
+const postKairdeButton = document.getElementById('saveKairde')
+postKairdeButton.addEventListener('click', postKairde)
 // function downloadDefault() {
 //     let anchor = document.createElement("a");
 //     let img = document.getElementById('resizedImage')

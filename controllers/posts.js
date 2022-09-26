@@ -105,8 +105,8 @@ module.exports = {
 
   getMyKairdes: async (req, res) => {
     try {
-      const posts = await Kairde.find({ createdBy: req.user.id }).sort({ createdAt: 'descending'}).lean();
-      res.render("feed.ejs", { user: req.user, posts: posts });
+      const posts = await Post.find({ user: req.user.id }).sort({ createdAt: "desc" }).lean();
+      res.render("feed.ejs", { posts: posts, user: req.user });
     } catch (err) {
       console.log(err);
     }
@@ -237,6 +237,28 @@ module.exports = {
       });
       console.log("Post has been added!");
       res.redirect("/profile");
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  saveKairde: async (req, res) => {
+    try {
+      // Upload image to cloudinary
+      const result = await cloudinary.uploader.upload(req.body.dataURL);
+      // cloudinary.uploader.upload(req.body.dataURL)
+      // .then( result => console.log(result));
+
+      await Post.create({
+        title: `${req.user.userName}'s Kairde`,
+        image: result.secure_url,
+        cloudinaryId: result.public_id,
+        caption: req.body.caption,
+        likes: 0,
+        user: req.user.id,
+      });
+      console.log("Post has been added!");
+      //change to direct to tool generated, using req.tool etc..
+      res.redirect("/profile/contactKairde");
     } catch (err) {
       console.log(err);
     }

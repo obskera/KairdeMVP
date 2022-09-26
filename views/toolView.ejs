@@ -4,9 +4,12 @@
     <h1><%=tool%> Kairde</h1>
     <%if (tool === 'contact') {%>
         <%- include('partials/contactKairde') %>
-    <%} else { %>
+    <%} else if  (tool === 'bio') { %>
+        <%- include('partials/bioKairde') %>
+    <%} else if  (tool === 'resume') { %>
+        <%- include('partials/resumeKairde') %>
+    <%} else {%>
         <%- include('partials/profileView') %>
     <%} %>
-
 </div>
 <%- include('partials/footer') -%>

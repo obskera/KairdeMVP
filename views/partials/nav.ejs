@@ -8,20 +8,25 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav">
-                
+                <a href="/profile/contactKairde" class="nav-item active navButton">Contact</a>
+                <a href="/profile/bioKairde" class="nav-item active navButton nav-item-push">Bio</a>
+                <a href="/profile/resumeKairde" class="nav-item active navButton nav-item-push">Resume</a>
+                <a href="/profile" class="nav-item active navButton nav-item-push">Upload</a>
+                <a href="/feed" class="nav-item active navButton nav-item-push">My Kairdes</a>
                 <!-- <a href="#" class="nav-item nav-link">Tools</a> -->
-                <%if (typeof user != 'undefined') { %>
-                <!-- <a href="/profile" class="nav-item nav-link">Profile</a> -->
-                <a href="/profile" class="nav-item active navButton">Profile</a>
-                <a href="/settings" class="nav-item active navButton" tabindex="-1">My Info</a>
-                <%}%>
+              
             </div>
             <div class="navbar-nav ms-auto">
                 <%if (typeof user == 'undefined') { %>
                 <a href="/signup" class="nav-item navButton">Register</a>
                 <a href="/login" class="nav-item navButton">Login</a>
                 <% } else { %>
-                    <a href="/logout" class="nav-item navButton">Logout</a>
+                    <%if (typeof user != 'undefined') { %>
+                        <!-- <a href="/profile" class="nav-item nav-link">Profile</a> -->
+                        
+                        <a href="/settings" class="nav-item active navButton " tabindex="-1">My Info</a>
+                        <%}%>
+                    <a href="/logout" class="nav-item navButton nav-item-push" tabindex="-4">Logout</a>
                 <% }%>
             </div>
         </div>

@@ -1,15 +1,30 @@
 <%- include('partials/header') -%>
-  <div class="container">
+  
+    <% if (posts.length < 1) {%>
+      <div class="container">
+        <h2>No saved Kairdes, Make or upload a Kairde</h2>
+        <!-- <h2>Nothing here yet, Upload something or make a Kairde.</h2> -->
+
+      </div>
+      <%} else {%>
     <div class="row justify-content-center mt-5">
       <ul class="row list-unstyled">
         <% for(var i=0; i<posts.length; i++) {%>
-          <li class="col-6 justify-content-between mt-5">
+          <li class="col-6 justify-content-center mt-5">
             <a href="/post/<%= posts[i]._id%>">
-              <img class="img-fluid" src="<%= posts[i].image%>">
+              <img class="img-fluid" style='max-width: 336px; ' src="<%= posts[i].image%>">
             </a>
           </li>
         <% } %>
         </ul>
     </div>
-  </div>  
+    <%}%>
+    <div class="dynamic-container">
+      <%- include('partials/upload')-%>
+    </div>
+   
+   
+ 
+
+ 
 <%- include('partials/footer') -%>

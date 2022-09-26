@@ -17,12 +17,13 @@ router.get("/profile/resumeKairde", ensureAuth, postsController.getResumeTool)
 //seperate method to get kairde feed
 router.get("/profile/myKairdes", ensureAuth, postsController.getMyKairdes)
 // router.get("/feed", ensureAuth, postsController.getFeed);
-router.get("/feed", ensureAuth, kairdeController.getKairdeFeed);
+router.get("/feed", ensureAuth, postsController.getMyKairdes);
 router.get("/login", authController.getLogin);
 router.post("/login", authController.postLogin);
 router.get("/logout", authController.logout);
 router.get("/signup", authController.getSignup);
 router.post("/signup", authController.postSignup);
 router.put("/updateInfo/:userID", authController.putUser);
+
 
 module.exports = router;
