@@ -11,8 +11,8 @@
       <ul class="row list-unstyled">
         <% for(var i=0; i<posts.length; i++) {%>
           <li class="col-4 justify-content-center mt-5">
-            <a href="/post/<%= posts[i]._id%>">
-              <img class="img-fluid" src="<%= posts[i].image%>">
+            <a href="/post/<%= posts[i]._id%>" class="">
+              <img class="img-fluid shadow" src="<%= posts[i].image%>">
             </a>
             <h2><%=posts[i].title%></h2>
             <h2><%=posts[i].caption%></h2>

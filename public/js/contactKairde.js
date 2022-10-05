@@ -1,11 +1,15 @@
+// const { render } = require("ejs")
 const previewBtn = document.getElementById('preview')
-previewBtn.addEventListener('click', renderPreview)
+previewBtn.addEventListener('click', () => {
+    renderPreview(false)
+})
 
+// let showPreview = true
 //field font sizes
-let nameSize = 90
+let nameSize = 115
 let titleSize = 60
-let phoneSize = 50
-let emailSize = 50
+let phoneSize = 60
+let emailSize = 75
 
 //field font justification ['left', 'center', 'right']
 let nameJust = 'center'
@@ -145,15 +149,44 @@ emailJustifyRight.addEventListener('click', () => {
 let downloadHighRes = document.getElementById('downloadHighRes')
 downloadHighRes.addEventListener('click', convertCanvasToImage)
 
+function getDefaultInputs() {
+    // const name = document.getElementById('name').value
+    // const title = document.getElementById('title').value
+    // const phone = document.getElementById('phone').value
+    // const email = document.getElementById('email').value
+    // if (name || title || phone || email) {
+    //     getInputs()
+    // } else {
+        let info = new Map()
+        info.set('name', 'Your Name')
+        info.set('title', 'Your Title')
+        info.set('phone', '0.000.0000')
+        info.set('email', 'You@email.com')
+        return info
+    // }
+}
 function getInputs() {
     let info = new Map()
-    info.set('name', document.getElementById('name').value || '')
-    info.set('title', document.getElementById('title').value || '')
-    info.set('phone', document.getElementById('phone').value || '')
-    info.set('email', document.getElementById('email').value || '')
-    return info
+    const name = document.getElementById('name').value
+    const title = document.getElementById('title').value
+    const phone = document.getElementById('phone').value
+    const email = document.getElementById('email').value
+    if (!name && !title && !phone && !email) {
+        info.set('name', 'Your Name')
+        info.set('title', 'Your Title')
+        info.set('phone', '0.000.0000')
+        info.set('email', 'You@email.com')
+        return info
+    } else {
+        info.set('name', document.getElementById('name').value || '')
+        info.set('title', document.getElementById('title').value || '')
+        info.set('phone', document.getElementById('phone').value || '')
+        info.set('email', document.getElementById('email').value || '')
+        return info
+    }
+ 
 }
-function renderPreview() {
+function renderPreview(renderDefaultBool) {
     //font
     const font = (size, name) => `${size}px ${name}`
     const justification = (type) => {
@@ -186,7 +219,7 @@ function renderPreview() {
     const secondary = '#1F1F1F'
     // const tertiary = '#333333'
     //get input values as a map
-    const info = getInputs()
+    const info = !renderDefaultBool ? getInputs() : getDefaultInputs()
     //setup canvas
     let canvas = document.getElementById("myCanvas");
     let ctx = canvas.getContext("2d");
@@ -239,7 +272,7 @@ function convertCanvasToImage() {
 }
 
 async function postKairde() {
-    renderPreview()
+    renderPreview(false)
     const canvas = document.querySelector('canvas')
 	// var image = new Image();
 	const dataUrl = canvas.toDataURL("image/png");
@@ -267,3 +300,6 @@ postKairdeButton.addEventListener('click', postKairde)
 //     anchor.download = "IMAGE.jpg";
 //     anchor.click();
 // }
+window.onload = function() {
+    renderPreview(true);
+  };

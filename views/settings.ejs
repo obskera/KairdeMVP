@@ -1,5 +1,5 @@
 <%- include('partials/header') -%>
-<div class="container test dynamic-container">
+<div class="container">
         <div class="row justify-content-center">
             <section class="col-6 mt-5">
                 <% if (locals.messages.errors) { %>
@@ -13,7 +13,7 @@
                     <% }) %>    
                 <% } %>
           
-                <form action="/updateInfo/<%=user.id%>?_method=PUT" method="POST">
+                <form action="/updateInfo/<%=user.id%>?_method=PUT" method="POST" class="box dynamic-container">
                     <!-- <div class="mb-3">
                         <label for="userName" class="form-label">User Name</label>
                         <input type="text" class="form-control" id="userName" name="userName">
@@ -84,8 +84,8 @@
                         <label for="skills" class="form-label">Skills</label>
                         <input type="skills" class="form-control" id="skills" name="skills" value="<%= userStore.skills%>">
                     </div>
-                    <button type="submit" class="btn btn-primary">Save</button>
-                    <a class="btn btn-secondary" href="/profile">Cancel</a>
+                    <button type="submit" class="btn btn-primary box">Save</button>
+                    <a class="btn btn-secondary box" href="/profile">Cancel</a>
                   </form>
             </section>
         </div>
