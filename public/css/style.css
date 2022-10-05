@@ -189,3 +189,15 @@ body{
 .opacity-20{
     opacity: 20%;
 }
+#wrapper {
+    display: inline;
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+  }
+  
+  .categoryForm {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }

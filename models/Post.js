@@ -4,7 +4,7 @@ const PostSchema = new mongoose.Schema({
   title: {
     type: String,
     default: '',
-    required: true,
+    // required: true,
   },
   image: {
     type: String,
@@ -19,7 +19,7 @@ const PostSchema = new mongoose.Schema({
   caption: {
     type: String,
     default: '',
-    required: true,
+    // required: true,
   },
   likes: {
     type: Number,

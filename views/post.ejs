@@ -6,8 +6,8 @@
     
       <div>
       
-        <a class="btn btn-primary" href="/profile">Home</a>
-        <a class="btn btn-secondary" href="/feed">My Kairdes</a>
+        <!-- <a class="btn btn-primary" href="/profile">Home</a>
+        <a class="btn btn-secondary" href="/feed">My Kairdes</a> -->
         <h2><%= post.title %></h2>
       </div>
       <img class="img-fluid box" src="<%= post.image%>" />
@@ -34,14 +34,15 @@
     <div class="col-3 mt-5">
       <!-- <p><%= post.caption %></p> -->
     </div>
-    <div class="mt-5">
-      <h2>Add a Note</h2>
-      <form action="/comment/createComment/<%=post._id%>" method="POST">
-        <div class="mb-3">
-            <label for="comment" class="form-label">Note: </label>
-            <input type="text" class="form-control" id="comment" name="comment">
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+    <div class="mt-5 wrapper">
+      <h2>Add a Comment</h2>
+      <form action="/comment/createComment/<%=post._id%>" method="POST" class="categoryForm">
+        <!-- <div class="mb-3"> -->
+            <!-- <label for="comment" class="form-label" style="margin: 2%;">Note: </label> -->
+            <input type="text" class="form-control" id="comment" name="comment" style="max-width: 70%; margin-right: 0.3%;">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        <!-- </div> -->
+     
       </form>
     </div>
     <ul class="no-list-style">
