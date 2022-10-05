@@ -179,3 +179,13 @@ body{
 .nav-item-push{
     margin-left: 15px;
 }
+.no-list-style{
+    list-style: none;
+}
+
+.my-box-background{
+    background-color: white;
+}
+.opacity-20{
+    opacity: 20%;
+}

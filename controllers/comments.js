@@ -14,4 +14,23 @@ module.exports = {
       console.log(err);
     }
   },
+
+  deleteComment: async (req, res) => {
+    console.log('id',req.params.id, 'post', req.body.post)
+    try {
+     
+      let comment = await Comment.findById({ _id: req.params.id });
+      await Comment.deleteOne({ _id: req.params.id }).then( function() {
+        console.log("Data deleted"); // Success
+        res.redirect("/post/"+req.body.post);
+    }).catch(function(error){
+        console.log(error); // Failure
+    });
+      // console.log("Deleted Comment", req.params.id);
+      // res.redirect("/post/"+req.params.id);
+    } 
+    catch (err) {
+      console.log(err);
+    }
+  },
 };
