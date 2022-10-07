@@ -1,5 +1,10 @@
 <%- include('partials/header') -%>
-    <main class="container">
+<%- include('partials/cookieDisclaimer')%>
+    <script> let cookiesRegister = window.localStorage.getItem('cookies');
+      if (!cookiesRegister || cookiesRegister === 'deny') { window.location.replace('/') }
+      setButtons(cookiesRegister)
+    </script>
+    <main class="container dynamic-container">
         <div class="row justify-content-center">
             <section class="col-6 mt-5">
                 <% if (locals.messages.errors) { %>
@@ -30,12 +35,11 @@
                         <label for="confirmPassword" class="form-label">Confirm Password</label>
                         <input type="password" class="form-control" id="confirmPassword" name="confirmPassword">
                       </div>
-                    <button type="submit" class="btn myButton">Submit</button>
-                    <a class="btn btn-secondary myButtonSecondary" href="/profile">Cancel</a>
+                    <button type="submit" class="btn myRadio primary-text previewSwap">Submit</button>
+                    <a class="btn myRadio primary-text previewSwap" href="/profile">Cancel</a>
 
                   </form>
             </section>
         </div>
     </main>
-
 <%- include('partials/footer') -%>

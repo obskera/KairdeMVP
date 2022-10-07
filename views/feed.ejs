@@ -7,15 +7,14 @@
 
       </div>
       <%} else {%>
-    <div class="row justify-content-center mt-5 dynamic-container" style="max-width: 90%; margin-left: 5%;">
+    <div class="row justify-content-center mt-5 dynamic-container snapBorder" style="max-width: 90%; margin-left: 5%;">
       <ul class="row list-unstyled">
         <% for(var i=0; i<posts.length; i++) {%>
           <li class="col-4 justify-content-center mt-5">
             <a href="/post/<%= posts[i]._id%>" class="">
-              <img class="img-fluid shadow" src="<%= posts[i].image%>">
+              <img class="img-fluid shadow snapBorder" src="<%= posts[i].image%>">
             </a>
             <h2><%=posts[i].title%></h2>
-            <h2><%=posts[i].caption%></h2>
           </li>
         <% } %>
         </ul>
@@ -23,6 +22,7 @@
     <%}%>
     <div class="dynamic-container" style="max-width: 90%; margin-left: 5%; margin-top: 2%; margin-bottom: 4%;">
       <%- include('partials/upload')-%>
+      <%- include('partials/cookieDisclaimer')%>
     </div>
    
    

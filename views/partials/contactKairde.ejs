@@ -6,44 +6,147 @@
           <input type="text" name="name" id="name">
           <div class="controlBox">
             <div class="plusMinus">
-              <a href="#/" class="btn myRadio" id="nameMinus">[-]</a>
-              <a href="#/" class="btn myRadio" id="namePlus">[+]</a>
+              <a href="#/" class="btn myRadio previewSwap" id="nameMinus">[-]</a>
+              <a href="#/" class="btn myRadio previewSwap" id="namePlus">[+]</a>
             </div>
+
+            <%if(user.id){ %>
+              <div class="">
+                <!-- <a href="#/" class="btn myRadio primary-text" id="savedNameButton">Use Saved Name</a> -->
+                <select id="ddlViewByName" class="btn myRadio selecto previewSwap" aria-label=".form-select-lg example" onchange="onChangeName()">
+                  <option selected>Use Saved Info</option>
+                  <%if(userInfo.name) {%> 
+                    <option value="<%=userInfo.name%>">Name</option>
+                  <%}%>
+                  <%if(userInfo.title) {%> 
+                    <option value="<%=userInfo.title%>">Title</option>
+                  <%}%>
+                  <%if(userInfo.phone) {%> 
+                    <option value="<%=userInfo.phone%>">Phone</option>
+                  <%}%>
+                  <%if(userInfo.email) {%> 
+                    <option value="<%=userInfo.mail%>">Email</option>
+                  <%}%>
+                  <!-- control multi select -->
+                  <script>
+                    // let selectName = ''
+                    function onChangeName() {
+                      let value = document.getElementById('ddlViewByName').value
+                      const nameTarget = document.getElementById('name')
+                      if(value !== 'Use Saved Info') {
+                        nameTarget.value = value
+                      } else {
+                        nameTarget.value = ''
+                      }
+                      renderPreview(false)
+                    }
+                  </script>
+                  <!--  -->
+                </select>
+              </div>
+            <%}%>
+
             <div class="justifyControls">
-              <a href="#/" class="btn myRadio primary-text" id="nameLeft">Left</a>
-              <a href="#/" class="btn myRadio primary-text" id="nameCenter">Center</a>
-              <a href="#/" class="btn myRadio primary-text" id="nameRight">Right</a>
+              <a href="#/" class="btn myRadio primary-text previewSwap" id="nameLeft">Left</a>
+              <a href="#/" class="btn myRadio primary-text previewSwap" id="nameCenter">Center</a>
+              <a href="#/" class="btn myRadio primary-text previewSwap" id="nameRight">Right</a>
             </div>
           </div>
-          
-
+      
           <label for="title">Title</label>
           <input type="text" name="title" id="title">
 
           <div class="controlBox">
             <div class="plusMinus">
-              <a href="#/" class="btn myRadio" id="titleMinus">[-]</a>
-              <a href="#/" class="btn myRadio" id="titlePlus">[+]</a>
+              <a href="#/" class="btn myRadio previewSwap" id="titleMinus">[-]</a>
+              <a href="#/" class="btn myRadio previewSwap" id="titlePlus">[+]</a>
             </div>
+
+            <%if(user.id){ %>
+              <div class="">
+                <!-- <a href="#/" class="btn myRadio primary-text" id="savedNameButton">Use Saved Name</a> -->
+                <select id="ddlViewByTitle" class="btn myRadio selecto mb-3 previewSwap" aria-label=".form-select-lg example" onchange="onChangeTitle()">
+                  <option selected>Use Saved Info</option>
+                  <%if(userInfo.name) {%> 
+                    <option value="<%=userInfo.name%>">Name</option>
+                  <%}%>
+                  <%if(userInfo.title) {%> 
+                    <option value="<%=userInfo.title%>">Title</option>
+                  <%}%>
+                  <%if(userInfo.phone) {%> 
+                    <option value="<%=userInfo.phone%>">Phone</option>
+                  <%}%>
+                  <%if(userInfo.email) {%> 
+                    <option value="<%=userInfo.mail%>">Email</option>
+                  <%}%>
+                  <!-- control multi select -->
+                  <script>
+                    // let selectTitle = ''
+                    function onChangeTitle() {
+                      let value = document.getElementById('ddlViewByTitle').value
+                      const nameTarget = document.getElementById('title')
+                      nameTarget.value = value
+                      renderPreview(false)
+                    }
+                  </script>
+                  <!--  -->
+                </select>
+              </div>
+            <%}%>
+            
             <div class="justifyControls">
-              <a href="#/" class="btn myRadio primary-text" id="titleLeft">Left</a>
-              <a href="#/" class="btn myRadio primary-text" id="titleCenter">Center</a>
-              <a href="#/" class="btn myRadio primary-text" id="titleRight">Right</a>
+              <a href="#/" class="btn myRadio primary-text previewSwap" id="titleLeft">Left</a>
+              <a href="#/" class="btn myRadio primary-text previewSwap" id="titleCenter">Center</a>
+              <a href="#/" class="btn myRadio primary-text previewSwap" id="titleRight">Right</a>
             </div>
           </div>
        
-
           <label for="phone">Phone</label>
           <input type="text" name="phone" id="phone">
           <div class="controlBox">
             <div class="plusMinus">
-              <a href="#/" class="btn myRadio" id="phoneMinus">[-]</a>
-              <a href="#/" class="btn myRadio" id="phonePlus">[+]</a>
+              <a href="#/" class="btn myRadio previewSwap" id="phoneMinus">[-]</a>
+              <a href="#/" class="btn myRadio previewSwap" id="phonePlus">[+]</a>
             </div>
+            <%if(user.id){ %>
+              <div class="">
+                <!-- <a href="#/" class="btn myRadio primary-text" id="savedNameButton">Use Saved Name</a> -->
+                <select id="ddlViewByPhone" class="btn myRadio selecto mb-3 previewSwap" aria-label=".form-select-lg example" onchange="onChangePhone()">
+                  <option selected>Use Saved Info</option>
+                  <%if(userInfo.name) {%> 
+                    <option value="<%=userInfo.name%>">Name</option>
+                  <%}%>
+                  <%if(userInfo.title) {%> 
+                    <option value="<%=userInfo.title%>">Title</option>
+                  <%}%>
+                  <%if(userInfo.phone) {%> 
+                    <option value="<%=userInfo.phone%>">Phone</option>
+                  <%}%>
+                  <%if(userInfo.email) {%> 
+                    <option value="<%=userInfo.mail%>">Email</option>
+                  <%}%>
+                  <!-- control multi select -->
+                  <script>
+                    // let selectName = ''
+                    function onChangePhone() {
+                      let value = document.getElementById('ddlViewByPhone').value
+                      const nameTarget = document.getElementById('phone')
+                      if(value !== 'Use Saved Info') {
+                        nameTarget.value = value
+                      } else {
+                        nameTarget.value = ''
+                      }
+                      renderPreview(false)
+                    }
+                  </script>
+                  <!--  -->
+                </select>
+              </div>
+            <%}%>
             <div class="justifyControls">
-              <a href="#/" class="btn myRadio primary-text" id="phoneLeft">Left</a>
-              <a href="#/" class="btn myRadio primary-text" id="phoneCenter">Center</a>
-              <a href="#/" class="btn myRadio primary-text" id="phoneRight">Right</a>
+              <a href="#/" class="btn myRadio primary-text previewSwap" id="phoneLeft">Left</a>
+              <a href="#/" class="btn myRadio primary-text previewSwap" id="phoneCenter">Center</a>
+              <a href="#/" class="btn myRadio primary-text previewSwap" id="phoneRight">Right</a>
             </div>
           </div>
 
@@ -51,30 +154,65 @@
           <input type="text" name="email" id="email">
           <div class="controlBox">
             <div class="plusMinus">
-              <a href="#/" class="btn myRadio" id="emailMinus">[-]</a>
-              <a href="#/" class="btn myRadio" id="emailPlus">[+]</a>
+              <a href="#/" class="btn myRadio previewSwap" id="emailMinus">[-]</a>
+              <a href="#/" class="btn myRadio previewSwap" id="emailPlus">[+]</a>
             </div>
+            <%if(user.id){ %>
+              <div class="">
+                <!-- <a href="#/" class="btn myRadio primary-text" id="savedNameButton">Use Saved Name</a> -->
+                <select id="ddlViewByEmail" class="btn myRadio selecto mb-3 previewSwap" aria-label=".form-select-lg example" onchange="onChangeEmail()">
+                  <option selected>Use Saved Info</option>
+                  <%if(userInfo.name) {%> 
+                    <option value="<%=userInfo.name%>">Name</option>
+                  <%}%>
+                  <%if(userInfo.title) {%> 
+                    <option value="<%=userInfo.title%>">Title</option>
+                  <%}%>
+                  <%if(userInfo.phone) {%> 
+                    <option value="<%=userInfo.phone%>">Phone</option>
+                  <%}%>
+                  <%if(userInfo.email) {%> 
+                    <option value="<%=userInfo.mail%>">Email</option>
+                  <%}%>
+                  <!-- control multi select -->
+                  <script>
+                    // let selectName = ''
+                    function onChangeEmail() {
+                      let value = document.getElementById('ddlViewByEmail').value
+                      const nameTarget = document.getElementById('email')
+                      if(value !== 'Use Saved Info') {
+                        nameTarget.value = value
+                      } else {
+                        nameTarget.value = ''
+                      }
+                      renderPreview(false)
+                    }
+                  </script>
+                  <!--  -->
+                </select>
+              </div>
+            <%}%>
             <div class="justifyControls">
-              <a href="#/" class="btn myRadio primary-text" id="emailLeft">Left</a>
-              <a href="#/" class="btn myRadio primary-text" id="emailCenter">Center</a>
-              <a href="#/" class="btn myRadio primary-text" id="emailRight">Right</a>
+              <a href="#/" class="btn myRadio primary-text previewSwap" id="emailLeft">Left</a>
+              <a href="#/" class="btn myRadio primary-text previewSwap" id="emailCenter">Center</a>
+              <a href="#/" class="btn myRadio primary-text previewSwap" id="emailRight">Right</a>
             </div>
           </div>
           
 
-          <a href="#/" class="btn btn-primary myButton spaced button-correction" id="preview">Preview</a>
+          <a href="#/" class="btn box myRadio selecto mb-3 previewSwap" id="preview"><bold>Preview</bold></a>
         </form>
       </div>
     </div>
 
-    <div class="col canvasPreview">
-      <canvas id="myCanvas" width="1050" height="600"></canvas>
+    <div class="col canvasPreview myForm">
+      <canvas class="myFormContainer2 sticky" id="myCanvas" width="1050" height="600"></canvas>
       <div class="canvasControls">
-        <a href="#/" class="btn btn-primary myButton spaced button-correction" id="downloadLowRes">Download Low Res.</a>
-        <a href="#/" class="btn btn-secondary myButtonSecondary spaced" id="downloadHighRes">Download High Res.</a>
+        <a href="#/" class="btn myRadio primary-text previewSwap box btnCorrecto" id="downloadLowRes">Download Low Res.</a>
+        <a href="#/" class="btn myRadio primary-text previewSwap box btnCorrecto" id="downloadHighRes">Download High Res.</a>
         <!-- <a href="#/" class="btn btn-primary myButton spaced">Save to My Account</a> -->
         <!-- <form action="/post/saveKairde/" method="POST" class="col-3"> -->
-          <button class="btn btn-primary myButton spaced button-correction" id="saveKairde" type="button">Save to My Account</button>
+          <button class="btn myRadio primary-text previewSwap box btnCorrecto" id="saveKairde" type="button">Save to My Account</button>
         <!-- </form> -->
       </div>
     </div>

@@ -84,11 +84,11 @@
                         <label for="skills" class="form-label">Skills</label>
                         <input type="skills" class="form-control" id="skills" name="skills" value="<%= userStore.skills%>">
                     </div>
-                    <button type="submit" class="btn btn-primary box">Save</button>
-                    <a class="btn btn-secondary box" href="/profile">Cancel</a>
+                    <button type="submit" class="btn myRadio primary-text previewSwap box btnCorrecto">Save</button>
+                    <a class="shadow box btn myRadio primary-text previewSwap btnCorrecto" href="/profile">Cancel</a>
                   </form>
             </section>
         </div>
     </div>
-
+    <%- include('partials/cookieDisclaimer')%>
 <%- include('partials/footer') -%>

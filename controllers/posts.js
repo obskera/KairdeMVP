@@ -22,7 +22,7 @@ module.exports = {
           return error
       }
     };
-
+    //-----//
     try {
       const tool = 'contact'
       const posts = await Post.find({ user: req.user.id });
@@ -31,6 +31,17 @@ module.exports = {
       const userInfo = await User.find({_id: req.user.id})
       //-=-=-=-=-=-//USE THIS AS MODEL TO DECRYPT ALL DATA//-=-=-=-=-=-=-=-//
       userInfo[0].twitter = await decrypt(userInfo[0].twitter, process.env.SECRET_KEY)
+      userInfo[0].mail = await decrypt(userInfo[0].mail, process.env.SECRET_KEY)
+      userInfo[0].name = await decrypt(userInfo[0].name, process.env.SECRET_KEY)
+      userInfo[0].title = await decrypt(userInfo[0].title, process.env.SECRET_KEY)
+      userInfo[0].phone = await decrypt(userInfo[0].phone, process.env.SECRET_KEY)
+      userInfo[0].discord = await decrypt(userInfo[0].discord, process.env.SECRET_KEY)
+      userInfo[0].linkedIn = await decrypt(userInfo[0].linkedIn, process.env.SECRET_KEY)
+      userInfo[0].facebook = await decrypt(userInfo[0].facebook, process.env.SECRET_KEY)
+      userInfo[0].website = await decrypt(userInfo[0].website, process.env.SECRET_KEY)
+      userInfo[0].github = await decrypt(userInfo[0].github, process.env.SECRET_KEY)
+      userInfo[0].city = await decrypt(userInfo[0].city, process.env.SECRET_KEY)
+      userInfo[0].state = await decrypt(userInfo[0].state, process.env.SECRET_KEY)
 
       // console.log('userInfo: ', userInfo[0]._id)
       res.render("toolView.ejs", { tool: tool, posts: posts, user: req.user, userInfo: userInfo[0]});
@@ -292,6 +303,7 @@ module.exports = {
       res.redirect("/feed");
     }
   },
+  
 };
 
 

@@ -1,0 +1,143 @@
+<style>
+    .cookie-disclaimer{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: rgb(33, 53, 85);
+        padding: 15px 0;
+        opacity: 1;
+        margin-bottom: 0.01%;
+    }
+.cookie-disclaimer__button{
+    width: 100%;
+    margin: 5px 0
+}
+/* // demo stuff */
+.cookieColor{
+    /* position: relative;
+    font-family: Arial;
+    font-size: 16px;*/
+    color: white !important;
+    /* background: silver; */
+    /* text-align: center; */
+}
+.cookie-disclaimer{
+        /* height: 50%;
+        justify-content: center; */
+        border: 10px solid black;
+        opacity: 90%;
+        text-align: left;
+}
+/* button{
+
+}
+    margin: 50px auto */
+</style>
+<!-- <button class="btn btn-info demo-show">SHOW DISCLAIMER</button>
+<button class="btn btn-info demo-hide">HIDE DISCLAIMER</button> -->
+
+<div class="cookie-disclaimer cookieColor" style="display: none;">
+  <div class="container">
+    <div class="row vertical-align">
+      <div class="col-xs-12 col-md-8">
+        <div class="cookie-disclaimer__disclaimer-text">
+          This website requires cookies to create an account, and use some features associated with accounts. <br><br>Cookies used are related to managing user session, and ensuring a smooth user experience. If you decline cookies, you will not be able to make a user account or use user account features as cookies are essential to their functioning, but can still use the tools and features that don't require them.
+          <!-- <a href="#"></a> -->
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-md-4">
+        <div class="cookie-disclaimer__disclaimer-button-wrapper">
+          <div class="row">
+            <div class="col-sm-6 col-md-12 col-lg-6">
+              <button class="btn btn-success cookie-disclaimer__button cookie-disclaimer__button_accept"><span>Accept Cookies</span></button>
+            </div>
+
+            <div class="col-sm-6 col-md-12 col-lg-6">
+              <button class="btn btn-danger cookie-disclaimer__button cookie-disclaimer__button_deny"><span>Refuse Cookies</span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  let disclaimer = document.querySelector(".cookie-disclaimer");
+  let cookies = window.localStorage.getItem('cookies');
+  if (!cookies) { fade('in', 500, disclaimer) }
+
+  function showCookieDisclaimer() {
+    fade('in', 500, disclaimer);
+  }
+
+  function hideCookieDisclaimer() {
+    fade("out", 500, disclaimer);
+  }
+  
+  // disclaimer was accepted
+  let acceptBtn = document.querySelector(".cookie-disclaimer__button_accept")
+  acceptBtn.addEventListener("click", function() {
+    window.localStorage.setItem('cookies', 'accept');
+    hideCookieDisclaimer();
+    const cookiesCheck = window.localStorage.getItem('cookies');
+    setButtons(cookiesCheck)
+    
+    // activate cookies
+    // [...]
+  });
+  
+  // disclaimer was denied
+  let denyBtn = document.querySelector(".cookie-disclaimer__button_deny")
+  denyBtn.addEventListener("click", function() {
+    window.localStorage.setItem('cookies', 'deny');
+    hideCookieDisclaimer();
+    const cookiesCheck = window.localStorage.getItem('cookies');
+    setButtons(cookiesCheck)
+    window.location.replace("/logout");
+  });
+
+  async function fade(type, ms, el) {
+  var isIn = type === 'in',
+    opacity = isIn ? 0 : 1,
+    interval = 50,
+    duration = ms,
+    gap = interval / duration;
+
+  if(isIn) {
+    el.style.display = 'inline';
+    el.style.opacity = opacity;
+  }
+
+  function func() {
+    opacity = isIn ? opacity + gap : opacity - gap;
+    el.style.opacity = opacity;
+
+    if(opacity <= 0) el.style.display = 'none'
+    if(opacity <= 0 || opacity >= 1) window.clearInterval(fading);
+  }
+
+  var fading = window.setInterval(func, interval);
+}
+async function setButtons(cookiesCheck) {
+         
+         const registerBtn = document.getElementById('registerBtn')
+         const loginBtn = document.getElementById('loginBtn')
+        //  console.log(cookiesCheck != 'deny')
+         if (cookiesCheck !== 'deny' && registerBtn && loginBtn) {
+             console.log('mmmm cookies')
+             registerBtn.style.display = 'flex'
+             loginBtn.style.display = 'flex'
+         } else if (registerBtn && loginBtn){
+            registerBtn.style.display = 'none'
+             loginBtn.style.display = 'none'
+             console.log('no Cookies for YOU')
+         }
+        //  setTimeout(() => {
+        //   window.location.reload()
+        //   }, 1000)
+         
+     }
+</script>

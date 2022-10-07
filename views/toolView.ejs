@@ -1,6 +1,6 @@
 <%- include('partials/header') -%>
 
-<div class="container test dynamic-container" style="margin-bottom: 4%;">
+<div class="container dynamic-container" style="margin-bottom: 4%;">
     <h1><%=tool%> Kairde</h1>
     <%if (tool === 'contact') {%>
         <%- include('partials/contactKairde') %>
@@ -12,4 +12,5 @@
         <%- include('partials/profileView') %>
     <%} %>
 </div>
+<%- include('partials/cookieDisclaimer')%>
 <%- include('partials/footer') -%>

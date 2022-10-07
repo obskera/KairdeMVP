@@ -8,27 +8,45 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav">
-                <a href="/profile/contactKairde" class="nav-item active navButton">Make Kairde</a>
+                <% if (typeof user != 'undefined') {%>
+                    <!-- <%%> -->
+                <a href="/profile/contactKairde" class="nav-item active navButton previewSwap">Make Kairde</a>
                 <!-- <a href="/profile/bioKairde" class="nav-item active navButton nav-item-push">Bio</a>
                 <a href="/profile/resumeKairde" class="nav-item active navButton nav-item-push">Resume</a> -->
-                <a href="/profile" class="nav-item active navButton nav-item-push">Upload</a>
-                <a href="/feed" class="nav-item active navButton nav-item-push">My Kairdes</a>
-                <!-- <a href="#" class="nav-item nav-link">Tools</a> -->
-              
+                <a href="/profile" class="nav-item active navButton nav-item-push previewSwap">Upload</a>
+                <a href="/feed" class="nav-item active navButton nav-item-push previewSwap">My Kairdes</a>
+                <!-- <a href="#/" class="nav-item nav-link">Tools</a> -->
+                <%}%>
+                 <a href="#/" class="nav-item active navButton nav-item-push previewSwap" id="cookiesDisclaimerButton"><i class="fa-solid fa-cookie"></i> ?</a>
             </div>
             <div class="navbar-nav ms-auto">
                 <%if (typeof user == 'undefined') { %>
-                <a href="/signup" class="nav-item navButton">Register</a>
-                <a href="/login" class="nav-item navButton">Login</a>
+                        <a href="/signup" class="nav-item navButton previewSwap" style="display: none;" id="registerBtn">Register</a>
+                        <a href="/login" class="nav-item navButton previewSwap" style="margin-left: 5%; display: none;" id="loginBtn">Login</a>
+             
                 <% } else { %>
                     <%if (typeof user != 'undefined') { %>
                         <!-- <a href="/profile" class="nav-item nav-link">Profile</a> -->
                         
-                        <a href="/settings" class="nav-item active navButton " tabindex="-1">My Info</a>
+                        <a href="/settings" class="nav-item active navButton previewSwap" tabindex="-1">My Info</a>
                         <%}%>
-                    <a href="/logout" class="nav-item navButton nav-item-push" tabindex="-4">Logout</a>
+                    <a href="/logout" class="nav-item navButton nav-item-push previewSwap" tabindex="-4">Logout</a>
                 <% }%>
             </div>
         </div>
     </div>
+    <script> 
+        const cookiesDisclaimerButton = document.getElementById("cookiesDisclaimerButton")
+        cookiesDisclaimerButton.addEventListener('click', _ => {
+            // window.localStorage.removeItem('cookies');
+            fade('in', 500, disclaimer)
+                
+    
+        
+
+
+    
+          
+        })
+    </script>
 </nav>

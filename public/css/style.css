@@ -9,19 +9,9 @@
     border: 3px solid red;
 }
 body{
-
     background: rgb(109,205,159);
-   
-    background: linear-gradient(106deg, rgba(109,205,159,1) 0%, rgba(137,175,105,1) 0%, rgba(146,91,105,1) 100%);
-    /* background-attachment: fixed; */
-    /* background-repeat: no-repeat; */
-    /* background-size:contain; */
-    /* background-size: cover;
-    background-position: center center;
-    background-image: url("../imgs/default.svg");
-    background-repeat: no-repeat; */
-    /*green background:rgb(137, 175, 105); */
-    /*red background:rgb(146, 91, 105); */
+    /* background: linear-gradient(142deg, rgba(109,205,159,1) 0%, rgba(19,63,198,1) 0%, rgba(27,170,184,1) 21%, rgba(40,232,252,1) 55%, rgba(8,58,183,1) 82%, rgba(27,170,184,1) 98%); */
+    background: rgb(33, 53, 85);
     position: relative;
     overflow-x: hidden;
 }
@@ -29,19 +19,24 @@ body{
     opacity: 80%;
     border: 3px solid black;
     /* box-shadow:inset; */
-    background:rgb(225, 255, 201) !important;
+    /* background:rgb(225, 255, 201) !important; */
+    /* background:rgba(255, 255, 255, 0.85) !important; */
+    background:rgba(255, 255, 255, 1) !important;
     margin: 2%;
     border-radius: 25px;
-    border: 2px solid #73AD21;
+    /* border: 2px solid #212aad; */
     padding: 20px;
     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.7); 
 }
 .dynamic-container{
-    background-image: url("/imgs/Beach.png");
-    background:rgba(225, 255, 201, 0.75) !important;
+    background-image: url("/imgs/Waterfall.png");
+    /* background:rgba(225, 255, 201, 0.75) !important; */
+    background:rgba(255, 255, 255, 0.8) !important;
+
     /* backdrop-filter: blur(5px) !important; */
     border-radius: 25px;
-    border: 2px solid #73AD21;
+    /* border: 2px solid #73AD21; */
+    border: 3px solid black;
     padding: 20px;
     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.7); 
     /* display: flex;
@@ -51,7 +46,8 @@ body{
 }
 .box{
     border-radius: 25px;
-    border: 2px solid #73AD21;
+    /* border: 2px solid #73AD21; */
+    border: 3px solid black;
     padding: 20px;
     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.7); 
     margin: 2%;
@@ -64,7 +60,8 @@ body{
 .navButton{
     /* margin-left: 1%; */
     border-radius: 25px;
-    border: 2px solid #73AD21;
+    /* border: 2px solid #73AD21; */
+    border: 3px solid black;
     padding: 10px;
     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.7); 
     /* margin: 2%;
@@ -75,18 +72,21 @@ body{
 }
 .navButton:hover {
     border-radius: 25px;
-    border: 2px solid #73AD21;
+    /* border: 2px solid #73AD21; */
+    border: 3px solid black;
     padding: 10px;
     /* box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.7);  */
     /* margin: 2%;
     width: 105%; */
     color: rgb(137, 175, 105);
     text-decoration: none;
-    cursor: auto; 
+    cursor: auto;
+
 }
 .myButton {
     border-radius: 25px;
-    border: 2px solid #73AD21;
+    /* border: 2px solid #73AD21; */
+    border: 3px solid black;
     padding: 10px;
     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.7); 
     /* margin: 2%;
@@ -97,7 +97,8 @@ body{
 }
 .myButton:hover {
     border-radius: 25px;
-    border: 2px solid #8c2110;
+    /* border: 2px solid #8c2110; */
+    border: 3px solid black;
     padding: 10px;
     /* box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.7);  */
     /* margin: 2%;
@@ -108,7 +109,8 @@ body{
 }
 .myButtonSecondary {
     border-radius: 25px;
-    border: 2px solid #73AD21;
+    /* border: 2px solid #73AD21; */
+    border: 3px solid black;
     padding: 10px;
     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.7); 
     /* margin: 2%;
@@ -119,7 +121,8 @@ body{
 }
 .myButtonSecondary:hover {
     border-radius: 25px;
-    border: 2px solid #73AD21;
+    /* border: 2px solid #73AD21; */
+    border: 3px solid black;
     padding: 10px;
     /* box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.7);  */
     /* margin: 2%;
@@ -135,7 +138,8 @@ body{
     /* max-width: 40%; */
 }
 #myCanvas{
-    border: 2px solid #73AD21;
+    /* border: 2px solid #73AD21; */
+    border: 3px solid black;
     padding: 10px;
     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.7); 
     /* margin: 2%;
@@ -165,7 +169,7 @@ body{
 .plusMinus *{
     font-size: 1.3rem;
     /* margin-top: 18px; */
-    color:#5d8d1b;
+    color:black;
     text-decoration: none;
 }
 .plusMinus *:hover{
@@ -177,7 +181,8 @@ body{
     justify-content: space-around;
 }
 .myRadio{
-    border: 3px solid #5d8d1b;
+    /* border: 3px solid #5d8d1b; */
+    border: 3px solid black;
     padding: 5px;
     margin-top: 10px;
 }
@@ -207,11 +212,149 @@ body{
     width: 100%;
   }
   .primary-text{
-    color: #5d8d1b;
+    color: black;
   }
   .primary-text:hover{
     color: white;
   }
   .button-correction:hover{
-    color: #8c2110;
+    color: black
   }
+  .selecto{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+    margin-top: 12%;
+    /* invert for hover */
+    color: black;
+    /* background-color: rgba(255, 255, 255, 0.25); */
+    /* border:3px solid  #5d8d1b; */
+    border: 3px solid black;
+  }
+  .selecto:hover{
+    color: white !important;
+    /* background-color: rgba(126, 181, 244, 0.75); */
+    /* border:3px solid  #5d8d1b; */
+    /* border: 3px solid rgb(255, 255, 255); */
+  }
+  .justifyControls{
+    margin-top: 0.75%;
+  }
+  .btn:focus, .myRadio:focus{
+    border: 3px solid rgb(255, 255, 255);
+    background-clip: padding-box !important;
+  }
+
+  .btn-snap{
+    padding: 5%;
+    color: black;
+    background-color: aliceblue;
+    border-radius: 2%;
+  }
+
+  select.button, button.button, a.button {
+    border-radius: 0.25rem;
+    padding: 1rem;
+    font-family: 'Avenir Next';
+    font-size: 1rem;
+    padding: .5rem 3rem;
+    color: black;
+    box-shadow: 0 0 6px 0 rgba(157, 96, 212, 0.5);
+    border: solid 3px transparent;
+    /* background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), linear-gradient(101deg, rgb(27, 170, 184), rgb(8,58,183)); */
+    background: rgb(33, 53, 85);;
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    /* box-shadow: 2px 1000px 1px #fff inset; */
+    color: #fff !important;
+  }
+  
+  select.button:hover, button.button:hover, a.button:hover {
+    box-shadow: none;
+    color: black;
+  }
+  .previewSwap{
+    /* background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), linear-gradient(101deg, rgb(27, 170, 184), rgb(8,58,183)); */
+    background: rgb(33, 53, 85);;
+    color: #fff;
+  }
+  .previewSwap:hover{
+    background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), linear-gradient(101deg, rgb(07, 150, 164), rgb(0,38,163));
+    color: rgb(255, 255, 255) !important;
+    /* border: 4px solid black; */
+}
+  
+.previewSwapAlt{
+    /* background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), linear-gradient(101deg, rgb(8,58,183), rgb(27, 170, 184)); */
+    background: rgb(33, 53, 85);
+    color: #fff;
+  }
+  .previewSwapAlt:hover{
+    background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), linear-gradient(38deg, rgb(0,38,163), rgb(07, 150, 164));
+    color: rgb(231, 230, 246) !important;
+}
+.previewSwapAlt2{
+    /* background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), linear-gradient(101deg, rgb(8,58,183), rgb(27, 170, 184)); */
+    background: rgb(33, 53, 85);
+    color: #fff;
+  }
+  .previewSwapAlt2:hover{
+    background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), linear-gradient(73deg, rgb(0,38,163), rgb(07, 150, 164));
+    color: rgb(231, 230, 246) !important;
+}
+.myFormContainer{
+    background-color: #fff;
+    overflow:hidden;
+    border-radius: 25px;
+    border: none;
+}
+.myFormContainer2{
+    background-color: #fff;
+    overflow:hidden;
+    border: none;
+}
+.justifyControls{
+    margin-left: 2%;
+}
+input, textarea{
+    border: 3px solid black !important;
+}
+.btnCorrecto{
+    border-radius: 5%;
+    padding: 2%;
+}
+.sticky{
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+}
+.snapBorder{
+    border: 3px solid black;
+}
+.trashCorrecto{
+    padding: 15%;
+}
+.trashCorrecto2{
+    padding: 5%;
+}
+.trashCorrecto3{
+margin: 0%;
+}
+.commentCorrecto{
+    justify-content: center;
+    align-items: center;
+    text-justify: center;
+    text-align: center;
+    /* padding-top: 2%; */
+}
+.correctoAligno{
+    display: flex ;
+    flex-direction: column;
+}
+.correctoAligno2{
+    margin: 0%;
+}
+.hideMeCookieMonster{
+    display: none;
+}
