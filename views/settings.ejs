@@ -90,6 +90,19 @@
                     <button type="submit" class="btn myRadio primary-text previewSwap box btnCorrecto">Save</button>
                     <a class="shadow box btn myRadio primary-text previewSwap btnCorrecto" href="/profile">Cancel</a>
                   </form>
+                  <div class="dynamic-container dangerZone">
+                    <form
+                    action="/delete/<%= user.id %>?_method=DELETE"
+                    method="POST"
+                    class="col-3"
+                    style="width: 100%;"
+                    onsubmit="return confirm('Do you really want to delete your account? (This is permanent and cannot be undone.')"
+                  >
+                    <h2>.::DANGER ZONE::.</h2>
+                    <button class="btn myRadio primary-text previewSwapDanger box btnCorrecto fa fa-trash box trashCorrecto danger-zone-button" type="submit"></button>
+                    <h2> Delete My Account</h2>
+                  </form>
+                  </div>
             </section>
         </div>
     </div>

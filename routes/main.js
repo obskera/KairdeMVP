@@ -26,5 +26,6 @@ router.get("/signup", authController.getSignup)
 router.post("/signup", authController.postSignup)
 router.put("/updateInfo/:userID", authController.putUser)
 router.get("/kairde/:shortLink", postsController.publicViewKairde)
+router.delete('/delete/:id', authController.deleteUser)
 
 module.exports = router;

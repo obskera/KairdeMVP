@@ -4,6 +4,22 @@ const crypto = require('crypto')
 const iv = crypto.randomBytes(16);
 const User = require("../models/User");
 
+exports.deleteUser = async (req, res) => {
+  try {
+    let deleted = await User.findByIdAndDelete({_id: req.params.id})
+    let posts = await Post.find({ userName: req.user.userName })
+    for (let post in Posts ) {
+      await cloudinary.uploader.destroy(post.cloudinaryId);
+      await Post.remove({ _id: req.params.id });
+    }
+      console.log("Deleted User");
+      console.log(posts)
+      res.redirect("/");
+  } catch (err) {
+    res.redirect("/");
+  }
+},
+
 exports.getLogin = (req, res) => {
   if (req.user) {
     return res.redirect("/profile");

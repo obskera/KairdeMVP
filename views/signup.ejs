@@ -5,6 +5,7 @@
       setButtons(cookiesRegister)
     </script>
     <main class="container dynamic-container">
+      <h1>Create an Account</h1>
         <div class="row justify-content-center">
             <section class="col-6 mt-5">
                 <% if (locals.messages.errors) { %>
@@ -35,11 +36,22 @@
                         <label for="confirmPassword" class="form-label">Confirm Password</label>
                         <input type="password" class="form-control" id="confirmPassword" name="confirmPassword">
                       </div>
-                    <button type="submit" class="btn myRadio primary-text previewSwap">Submit</button>
+                      <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault">
+                        <label class="form-check-label" for="flexSwitchCheckDefault"><a href="/policies" target="_blank">I have read and accept and/or agree to the terms of service and privacy policies (click to open in new tab).</a></label>
+                      </div>
+                    <button type="submit" class="btn myRadio primary-text previewSwap" disabled="true" id="submit">Submit</button>
                     <a class="btn myRadio primary-text previewSwap" href="/profile">Cancel</a>
 
                   </form>
             </section>
         </div>
     </main>
+    <script>
+      const agreeTerms = document.getElementById('flexSwitchCheckDefault')
+      const submit = document.getElementById('submit')
+      agreeTerms.addEventListener('change', () =>{
+        submit.disabled = !submit.disabled
+      })
+    </script>
 <%- include('partials/footer') -%>
