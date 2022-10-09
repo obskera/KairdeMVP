@@ -42,7 +42,12 @@
     <div class="row vertical-align">
       <div class="col-xs-12 col-md-8">
         <div class="cookie-disclaimer__disclaimer-text">
-          This website requires cookies to create an account, and use some features associated with accounts. <br><br>Cookies used are related to managing user session, and ensuring a smooth user experience. If you decline cookies, you will not be able to make a user account or use user account features as cookies are essential to their functioning, but can still use the tools and features that don't require them.
+          This website requires essentials cookies to create an account, and use features associated with accounts. 
+          <br><br>
+          If you refuse deny cookies you can use features not associated with an account, but will be immediately logged out (if logged in) and need to accept cookies to login or register a new account.
+          <br><br>
+          Your choice to accept or deny cookies is saved in your browser local storage, and can be changed by clicking to cookie icon to bring the choice back.
+          <br><br>Cookies used are related to managing user session, and ensuring a smooth user experience. If you decline cookies, you will not be able to make a user account or use user account features as cookies are essential to their functioning, but can still use the tools and features that don't require them.
           <!-- <a href="#"></a> -->
         </div>
       </div>
@@ -94,8 +99,8 @@
   denyBtn.addEventListener("click", function() {
     window.localStorage.setItem('cookies', 'deny');
     hideCookieDisclaimer();
-    const cookiesCheck = window.localStorage.getItem('cookies');
-    setButtons(cookiesCheck)
+    // const cookiesCheck = window.localStorage.getItem('cookies');
+    // setButtons()
     window.location.replace("/logout");
   });
 
@@ -121,10 +126,10 @@
 
   var fading = window.setInterval(func, interval);
 }
-async function setButtons(cookiesCheck) {
-         
-         const registerBtn = document.getElementById('registerBtn')
-         const loginBtn = document.getElementById('loginBtn')
+async function setButtons() {
+        const cookiesCheck = window.localStorage.getItem('cookies');
+        const registerBtn = document.getElementById('registerBtn')
+        const loginBtn = document.getElementById('loginBtn')
         //  console.log(cookiesCheck != 'deny')
          if (cookiesCheck !== 'deny' && registerBtn && loginBtn) {
              console.log('mmmm cookies')

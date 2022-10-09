@@ -358,3 +358,48 @@ margin: 0%;
 .hideMeCookieMonster{
     display: none;
 }
+.wbg{
+    padding: 2%;
+    background: white;
+    opacity: 80%;
+    border-radius: 15px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+/* add breakpoints for small screens
+ */
+.wbg-image{
+    max-width: 300px;
+}
+.wbg-image:hover, .wbg-image:focus{
+    max-width: 75%;
+    /* border: 5px solid aliceblue; */
+}
+.wbg-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.register-banner{
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.innerBannerArea{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.bannerSpan{
+    margin: 4%;
+    font-size: 1.8rem;
+}

@@ -1,0 +1,24 @@
+<%- include('partials/header') -%>
+<div class="wbg-container">
+  <div class="wbg">
+    <img class="wbg-image" src="<%= post.image%>" alt="image of kairde (card) that grows in size on hover and focus/selection"/>
+    <h2><%= post.title %></h2>
+  </div>
+</div>
+
+<div class="register-cookies dynamic-container register-banner" id="needCookiesBanner">
+  <h2>To make your own Kairde, or save this one, accept cookies to login or register</h2>
+  <!-- <a href="#/" class="nav-item active navButton nav-item-push previewSwap" id="cookiesDisclaimerButton"><i class="fa-solid fa-cookie"></i> ?</a> -->
+</div>
+<div class="dynamic-container register-banner" id="registerBanner" style="display: none;">
+  <h2>Want to make you're own Kairde? Or save this one to your account?</h2>
+  <div class="innerBannerArea">
+    <%- include('partials/registerButton')%>
+    <div class="bannerSpan">/</div>
+    <%- include('partials/loginButton') %>
+  </div>
+</div>
+
+<%- include('partials/cookieDisclaimer')%>
+<script src="../js/banner.js"></script>
+<%- include('partials/footer') -%>

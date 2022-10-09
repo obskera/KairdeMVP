@@ -1,7 +1,9 @@
 <%- include('partials/header') -%>
 <div class="container">
         <div class="row justify-content-center">
+            
             <section class="col-6 mt-5">
+                
                 <% if (locals.messages.errors) { %>
                     <% messages.errors.forEach( el => { %>
                         <div class="alert alert-danger"><%= el.msg %></div>
@@ -14,6 +16,7 @@
                 <% } %>
           
                 <form action="/updateInfo/<%=user.id%>?_method=PUT" method="POST" class="box dynamic-container">
+                    <h1>My Info</h1>
                     <!-- <div class="mb-3">
                         <label for="userName" class="form-label">User Name</label>
                         <input type="text" class="form-control" id="userName" name="userName">

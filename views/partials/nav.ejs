@@ -9,13 +9,9 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav">
                 <% if (typeof user != 'undefined') {%>
-                    <!-- <%%> -->
                 <a href="/profile/contactKairde" class="nav-item active navButton previewSwap">Make Kairde</a>
-                <!-- <a href="/profile/bioKairde" class="nav-item active navButton nav-item-push">Bio</a>
-                <a href="/profile/resumeKairde" class="nav-item active navButton nav-item-push">Resume</a> -->
                 <a href="/profile" class="nav-item active navButton nav-item-push previewSwap">Upload</a>
-                <a href="/feed" class="nav-item active navButton nav-item-push previewSwap">My Kairdes</a>
-                <!-- <a href="#/" class="nav-item nav-link">Tools</a> -->
+                <a href="/feed" class="nav-item active navButton nav-item-push previewSwap">Saved</a>
                 <%}%>
                  <a href="#/" class="nav-item active navButton nav-item-push previewSwap" id="cookiesDisclaimerButton"><i class="fa-solid fa-cookie"></i> ?</a>
             </div>
@@ -26,8 +22,6 @@
              
                 <% } else { %>
                     <%if (typeof user != 'undefined') { %>
-                        <!-- <a href="/profile" class="nav-item nav-link">Profile</a> -->
-                        
                         <a href="/settings" class="nav-item active navButton previewSwap" tabindex="-1">My Info</a>
                         <%}%>
                     <a href="/logout" class="nav-item navButton nav-item-push previewSwap" tabindex="-4">Logout</a>
@@ -38,15 +32,11 @@
     <script> 
         const cookiesDisclaimerButton = document.getElementById("cookiesDisclaimerButton")
         cookiesDisclaimerButton.addEventListener('click', _ => {
-            // window.localStorage.removeItem('cookies');
             fade('in', 500, disclaimer)
-                
-    
-        
-
-
-    
-          
         })
+        // const cookiesChecker = window.localStorage.getItem('cookies')
+        // if (cookiesCheckBanner === 'accept') {
+
+        // } 
     </script>
 </nav>

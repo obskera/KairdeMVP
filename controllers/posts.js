@@ -4,8 +4,12 @@ const Post = require("../models/Post");
 const User = require("../models/User")
 const Kairde = require("../models/Kairde")
 const Comment = require("../models/Comment");
+const { truncate } = require("fs");
 
 module.exports = {
+  getPrivacyTermsPolicies: async (req, res) => {
+    res.render('policies.ejs')
+  },
   getContactTool: async (req, res) => {
     //decryption function -----change to a module to import
     async function decrypt(hash, secretKey) {
@@ -233,11 +237,24 @@ module.exports = {
       console.log(err);
     }
   },
+  //-----//new public view via shortlink -- if post exists and is marked to share//------//
+  publicViewKairde: async (req, res) => {
+    let post = await Post.findOne({link: req.params.shortLink})
+    if (!post || post.share === false) { post = {} }
+    if (post.share) {
+      console.log('sharing OK')
+      res.render('publicView.ejs', {post: post})
+    } else {
+      console.log('oops')
+      res.render('404.ejs')
+    }
+  },
+  ///.end///
   createPost: async (req, res) => {
     try {
       // Upload image to cloudinary
       const result = await cloudinary.uploader.upload(req.file.path);
-
+      // console.log(req.body)
       await Post.create({
         title: req.body.title,
         image: result.secure_url,
@@ -245,14 +262,55 @@ module.exports = {
         caption: req.body.caption,
         likes: 0,
         user: req.user.id,
+        share: req.body.share.value
       });
-      console.log("Post has been added!");
+      console.log("Kaired has been added!");
       res.redirect("/feed");
     } catch (err) {
       console.log(err);
     }
   },
+
   saveKairde: async (req, res) => {
+    ///new shortlink maker stuff
+    class ShortLinker {
+      constructor() {}
+      poolA = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v' , 'w', 'x', 'y', 'z']
+      poolB = this.poolA.map(letter => {
+          return letter.toUpperCase()
+      })
+      link(length) {
+          let link = ''
+          for (let i = 0; i < length; i++) {
+              const rando = Math.ceil(Math.random() * 25)
+              // console.log(this.rando)
+              let flip = Math.random()
+              flip < 0.5 ? link += this.poolA[rando] : link += this.poolB[rando]
+          }
+          // console.log(link)
+          return link
+      }
+    }
+    let shortLink = new ShortLinker()
+    //just feed it length of url
+    let link = await linkGen()
+    // let link = 'a'
+
+    async function linkGen() {
+  //  let gen = 'bh'
+      let gen = shortLink.link(4)
+      let check = await Post.findOne({link: `${req.user.userName}-${gen}`})
+        if (check) { 
+          console.log('collision!')
+          linkGen()
+        } else {
+          console.log('unique!')
+          return gen
+        }
+    }
+    
+    //END SHORTLINK STUFF
+
     try {
       // Upload image to cloudinary
       const result = await cloudinary.uploader.upload(req.body.dataURL);
@@ -266,14 +324,18 @@ module.exports = {
         caption: req.body.caption,
         likes: 0,
         user: req.user.id,
+        userName: req.user.userName,
+        share: req.body.share,
+        link: `${req.user.userName}-${link}`
       });
-      console.log("Post has been added!");
+      console.log("Kairde has been added!");
       //change to direct to tool generated, using req.tool etc..
       res.redirect("/profile/contactKairde");
     } catch (err) {
       console.log(err);
     }
   },
+
   /////////use this for put model
   likePost: async (req, res) => {
     try {

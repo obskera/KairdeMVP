@@ -30,10 +30,21 @@ const PostSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
   },
+  userName: {
+    type: String
+  },
   createdAt: {
     type: Date,
     default: Date.now,
   },
+  share: {
+    type: Boolean,
+    default: false
+  },
+  link: {
+    type: String,
+    unique: true
+  }
 });
 
 module.exports = mongoose.model("Post", PostSchema);

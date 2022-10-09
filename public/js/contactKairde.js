@@ -276,11 +276,14 @@ async function postKairde() {
     const canvas = document.querySelector('canvas')
 	// var image = new Image();
 	const dataUrl = canvas.toDataURL("image/png");
-
+    const share = document.getElementById('share').checked
+    console.log(share)
     let data = {
         dataURL: dataUrl,
         caption: 'Made with Kairde Contact',
-        tool: 'contact'
+        tool: 'contact',
+        share: share
+
     };
     fetch("/post/saveKairde", {
     method: "POST",
@@ -292,7 +295,10 @@ async function postKairde() {
     });
 }
 const postKairdeButton = document.getElementById('saveKairde')
-postKairdeButton.addEventListener('click', postKairde)
+if (postKairdeButton) {
+    postKairdeButton.addEventListener('click', postKairde)
+}
+
 // function downloadDefault() {
 //     let anchor = document.createElement("a");
 //     let img = document.getElementById('resizedImage')
