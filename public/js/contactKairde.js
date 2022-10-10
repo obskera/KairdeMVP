@@ -272,6 +272,8 @@ function convertCanvasToImage() {
 }
 
 async function postKairde() {
+    const spinner = document.getElementById('spinnerIcon')
+    fade('in', 3000, spinner)
     renderPreview(false)
     const canvas = document.querySelector('canvas')
 	// var image = new Image();
@@ -290,8 +292,8 @@ async function postKairde() {
     headers: {'Content-Type': 'application/json'}, 
     body: JSON.stringify(data)
     }).then(res => {
-    console.log("Request complete! response:", res);
-    alert('Change this later: Kairde saved!')
+        console.log("Request complete! response:", res);
+        window.location.replace('/feed')
     });
 }
 const postKairdeButton = document.getElementById('saveKairde')
@@ -308,4 +310,4 @@ if (postKairdeButton) {
 // }
 window.onload = function() {
     renderPreview(true);
-  };
+};

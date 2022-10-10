@@ -7,6 +7,34 @@ const Comment = require("../models/Comment");
 const { truncate } = require("fs");
 
 module.exports = {
+  receiveKairde: async (req, res) => {
+    const link = req.body.link
+    // const caption = req.body.caption
+    // const title = req.body.title
+    const userID = req.user.id
+    try {
+      const received = await Post.find({link: link})
+      console.log(received[0].image)
+      await Post.create({
+          title: received[0].title,
+          image: received[0].image,
+          cloudinaryId: received[0].cloudinaryId,
+          caption: received[0].caption,
+          likes: 0,
+          user: userID,
+          share: received[0].share,
+          link: received[0].link,
+          imported: true
+      }).then(() => {
+        console.log("Kaired has been added!");
+        res.redirect('/feed')
+      })
+    
+    } catch (err) {
+      console.log(err);
+    }
+  },
+
   getPrivacyTermsPolicies: async (req, res) => {
     res.render('policies.ejs')
   },
@@ -308,9 +336,6 @@ module.exports = {
           return gen
         }
     }
-    
-    //END SHORTLINK STUFF
-
     try {
       // Upload image to cloudinary
       const result = await cloudinary.uploader.upload(req.body.dataURL);
@@ -330,7 +355,7 @@ module.exports = {
       });
       console.log("Kairde has been added!");
       //change to direct to tool generated, using req.tool etc..
-      res.redirect("/profile/contactKairde");
+      res.redirect("/feed");
     } catch (err) {
       console.log(err);
     }

@@ -12,6 +12,7 @@
   - CLOUD_NAME = `your cloudinary cloud name`
   - API_KEY = `your cloudinary api key`
   - API_SECRET = `your cloudinary api secret`
+  - DEFAULT_URL = replace 'http://localhost:3000/' with url
 
 ---
 

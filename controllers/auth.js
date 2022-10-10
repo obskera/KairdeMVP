@@ -9,8 +9,10 @@ exports.deleteUser = async (req, res) => {
     let deleted = await User.findByIdAndDelete({_id: req.params.id})
     let posts = await Post.find({ userName: req.user.userName })
     for (let post in Posts ) {
-      await cloudinary.uploader.destroy(post.cloudinaryId);
-      await Post.remove({ _id: req.params.id });
+      if (!post.imported) {
+        await cloudinary.uploader.destroy(post.cloudinaryId);
+        await Post.remove({ _id: req.params.id });
+      }
     }
       console.log("Deleted User");
       console.log(posts)
@@ -22,7 +24,7 @@ exports.deleteUser = async (req, res) => {
 
 exports.getLogin = (req, res) => {
   if (req.user) {
-    return res.redirect("/profile");
+    return res.redirect("/profile/contactKairde");
   }
   res.render("login", {
     title: "Login",

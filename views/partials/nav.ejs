@@ -1,7 +1,7 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
+<nav class="navbar navbar-expand-xl navbar-light bg-light">
+    <div class="container-fluid navAdjust">
         <a href="/profile" class="navbar-brand">
-            <img src="../../imgs/default-monochrome.svg" height="85" alt="Kairde Logo">
+            <img src="../../imgs/default-monochrome.svg" class="img-break480" height="85" alt="Kairde Logo">
         </a>
         <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
@@ -9,23 +9,24 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav">
                 <% if (typeof user != 'undefined') {%>
-                <a href="/profile/contactKairde" class="nav-item active navButton previewSwap">Make Kairde</a>
-                <a href="/profile" class="nav-item active navButton nav-item-push previewSwap">Upload</a>
-                <a href="/feed" class="nav-item active navButton nav-item-push previewSwap">Saved</a>
+                <a href="/profile/contactKairde" class="left-pusher nav-item active navButton previewSwapSquare">Make</a>
+                <a href="/profile" class="nav-item active navButton nav-item-push previewSwapSquare">Import</a>
+                <a href="/feed" class="nav-item active navButton nav-item-push previewSwapSquare">Saved</a>
                 <%}%>
-                 <a href="#/" class="nav-item active navButton nav-item-push previewSwap" id="cookiesDisclaimerButton"><i class="fa-solid fa-cookie"></i> ?</a>
+                 <a href="#/" class="nav-item active navButton nav-item-push previewSwapSquare" id="cookiesDisclaimerButton"><i class="fa-solid fa-cookie"></i> ?</a>
+                 <%if (typeof user == 'undefined') { %>
+                    <a href="/signup" class="nav-item navButton previewSwapSquare nav-item-push" style="display: none;" id="registerBtn">Register</a>
+                    <a href="/login" class="nav-item navButton previewSwapSquare nav-item-push" style="margin-left: 5%; display: none;" id="loginBtn">Login</a>
+         
+            <% } else { %>
+                <%if (typeof user != 'undefined') { %>
+                    <a href="/settings" class="nav-item active navButton previewSwapSquare nav-item-push" tabindex="-1">My Info</a>
+                    <%}%>
+                <a href="/logout" class="nav-item navButton nav-item-push previewSwapSquare" tabindex="-4">Logout</a>
+            <% }%>
             </div>
             <div class="navbar-nav ms-auto">
-                <%if (typeof user == 'undefined') { %>
-                        <a href="/signup" class="nav-item navButton previewSwap" style="display: none;" id="registerBtn">Register</a>
-                        <a href="/login" class="nav-item navButton previewSwap" style="margin-left: 5%; display: none;" id="loginBtn">Login</a>
-             
-                <% } else { %>
-                    <%if (typeof user != 'undefined') { %>
-                        <a href="/settings" class="nav-item active navButton previewSwap" tabindex="-1">My Info</a>
-                        <%}%>
-                    <a href="/logout" class="nav-item navButton nav-item-push previewSwap" tabindex="-4">Logout</a>
-                <% }%>
+           
             </div>
         </div>
     </div>

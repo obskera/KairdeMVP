@@ -1,8 +1,8 @@
 <%- include('partials/header') -%>
-<div class="container">
-        <div class="row justify-content-center">
+<div class="container dynamic-container centering">
+        <div class="row justify-content-center width90">
             
-            <section class="col-6 mt-5">
+            <section class="col-6 mt-5 width100">
                 
                 <% if (locals.messages.errors) { %>
                     <% messages.errors.forEach( el => { %>
@@ -15,7 +15,7 @@
                     <% }) %>    
                 <% } %>
           
-                <form action="/updateInfo/<%=user.id%>?_method=PUT" method="POST" class="box dynamic-container">
+                <form action="/updateInfo/<%=user.id%>?_method=PUT" method="POST" class="width90">
                     <h1>My Info</h1>
                     <!-- <div class="mb-3">
                         <label for="userName" class="form-label">User Name</label>
@@ -90,19 +90,22 @@
                     <button type="submit" class="btn myRadio primary-text previewSwap box btnCorrecto">Save</button>
                     <a class="shadow box btn myRadio primary-text previewSwap btnCorrecto" href="/profile">Cancel</a>
                   </form>
-                  <div class="dynamic-container dangerZone">
-                    <form
-                    action="/delete/<%= user.id %>?_method=DELETE"
-                    method="POST"
-                    class="col-3"
-                    style="width: 100%;"
-                    onsubmit="return confirm('Do you really want to delete your account? (This is permanent and cannot be undone.')"
-                  >
-                    <h2>.::DANGER ZONE::.</h2>
-                    <button class="btn myRadio primary-text previewSwapDanger box btnCorrecto fa fa-trash box trashCorrecto danger-zone-button" type="submit"></button>
-                    <h2> Delete My Account</h2>
-                  </form>
-                  </div>
+                  <hr>
+                  <div class="dangerZone boxG">
+                    <div>
+                        <form
+                        action="/delete/<%= user.id %>?_method=DELETE"
+                        method="POST"
+                        class="col-3"
+                        style="width: 100%;"
+                        onsubmit="return confirm('Do you really want to delete your account? This is permanent and cannot be undone.')"
+                      >
+                        <h2>.::DANGER ZONE::.</h2>
+                        <button class="btn myRadio primary-text previewSwapDanger box btnCorrecto fa fa-trash box trashCorrecto danger-zone-button" type="submit"></button>
+                        <h2> Delete My Account</h2>
+                      </form>
+                    </div>
+                </div>
             </section>
         </div>
     </div>
