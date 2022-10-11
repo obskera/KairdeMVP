@@ -39,14 +39,15 @@ module.exports = {
   
       async function linkGen() {
     //  let gen = 'bh'
-        let gen = req.user.userName + shortLink.link(4)
+        let gen = shortLink.link(4)
         let check = await Post.findOne({link: `${req.user.userName}-${gen}`})
           if (check) { 
             console.log('collision!')
             linkGen()
           } else {
             console.log('unique!')
-            return gen
+            const generated = `${req.user.userName}-${gen}`
+            return generated
           }
       }
 
