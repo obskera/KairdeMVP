@@ -39,7 +39,7 @@ module.exports = {
   
       async function linkGen() {
     //  let gen = 'bh'
-        let gen = shortLink.link(4)
+        let gen = req.user.userName + shortLink.link(4)
         let check = await Post.findOne({link: `${req.user.userName}-${gen}`})
           if (check) { 
             console.log('collision!')
@@ -63,7 +63,7 @@ module.exports = {
           share: received[0].share,
           //create new link here
           // link: received[0].link,
-          link: `${req.user.userName}${genLink}`,
+          link: genLink,
           imported: true
       }).then(() => {
         console.log("Kaired has been added!");
