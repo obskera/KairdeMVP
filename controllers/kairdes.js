@@ -4,15 +4,12 @@ module.exports = {
   createKairde: async (req, res) => {
     try {
       await Kairde.create({
-        // comment: req.body.comment,
-        // likes: 0,
         createdBy: req.user.id,
         public: req.body.public,
         link: req.body.link,
         //encrypt this?
         dataURL: req.body.dataURL, 
         type: req.body.type,
-        // kairde: req.params.id,
       });
       console.log("Kairde has been added!");
     //   res.redirect("/post/"+req.params.id);
@@ -52,34 +49,3 @@ module.exports = {
     }
   },
 };
-
-// createdBy: {
-//     type: String,
-//     required: true,
-//   },
-//   public: {
-//     type: Bool,
-//     required: true,
-//     default: false,
-//   },
-//   link: {
-//     type: String,
-//     default: '',
-//   },
-//   dataURL: {
-//     type: String,
-//     required: true,
-//   },
-//   type: {
-//     type: String,
-//     required: true,
-//     default: 'contact'
-//   },
-//   kairde: {
-//     type: mongoose.Schema.Types.ObjectId,
-//     ref: "Kairde",
-//   },
-//   createdAt: {
-//     type: Date,
-//     default: Date.now,
-//   },

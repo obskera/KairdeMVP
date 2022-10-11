@@ -6,11 +6,7 @@ const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
 //Post Routes - simplified for now
 router.get("/:id", ensureAuth, kairdeController.getKairde);
-
 router.post("/createPost", kairdeController.createKairde);
-
-// router.put("/likePost/:id", kairdeController.likeKairde);
-
 router.delete("/deletePost/:id", kairdeController.deleteKairde);
 
 module.exports = router;

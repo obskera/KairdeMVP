@@ -29,7 +29,6 @@ router.put("/updateInfo/:userID", authController.putUser)
 
 //public get share link below
 router.get("/kairde/:shortLink", postsController.publicViewKairde)
-
 router.delete('/delete/:id', authController.deleteUser)
 
 module.exports = router;

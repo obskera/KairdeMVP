@@ -264,11 +264,6 @@ function convertCanvasToImage() {
     anchor.href = image.src
     anchor.download = "MyKairde.png";
     anchor.click();
-    // let img = document.getElementById('imgCont')
-    // image.style.width = '336px'
-    // image.style.height = '192px'
-    // img.appendChild(image)
-	//return image;
 }
 
 async function postKairde() {
@@ -300,14 +295,6 @@ const postKairdeButton = document.getElementById('saveKairde')
 if (postKairdeButton) {
     postKairdeButton.addEventListener('click', postKairde)
 }
-
-// function downloadDefault() {
-//     let anchor = document.createElement("a");
-//     let img = document.getElementById('resizedImage')
-//     anchor.href = img.src
-//     anchor.download = "IMAGE.jpg";
-//     anchor.click();
-// }
 window.onload = function() {
     renderPreview(true);
 };

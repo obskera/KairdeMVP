@@ -26,8 +26,6 @@ module.exports = {
     }).catch(function(error){
         console.log(error); // Failure
     });
-      // console.log("Deleted Comment", req.params.id);
-      // res.redirect("/post/"+req.params.id);
     } 
     catch (err) {
       console.log(err);

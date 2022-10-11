@@ -149,7 +149,7 @@ exports.postSignup = (req, res, next) => {
     email: req.body.email,
     password: req.body.password,
     // remove after test
-    twitter: '@Test'
+    // twitter: '@Test'
   });
 
   User.findOne(

@@ -9,7 +9,6 @@
               <a href="#/" class="btn myRadio previewSwap" id="nameMinus">[-]</a>
               <a href="#/" class="btn myRadio previewSwap" id="namePlus">[+]</a>
             </div>
-
             <%if(user.id){ %>
               <div class="">
                 <select id="ddlViewByName" class="btn myRadio selecto previewSwap" aria-label=".form-select-lg example" onchange="onChangeName()">
@@ -25,6 +24,30 @@
                   <%}%>
                   <%if(userInfo.email) {%> 
                     <option value="<%=userInfo.mail%>">Email</option>
+                  <%}%>
+                  <%if(userInfo.discord) {%> 
+                    <option value="<%=userInfo.discord%>">Discord</option>
+                  <%}%>
+                  <%if(userInfo.twitter) {%> 
+                    <option value="<%=userInfo.twitter%>">twitter</option>
+                  <%}%>
+                  <%if(userInfo.linkedIn) {%> 
+                    <option value="<%=userInfo.linkedIn%>">linkedIn</option>
+                  <%}%>
+                  <%if(userInfo.facebook) {%> 
+                    <option value="<%=userInfo.facebook%>">facebook</option>
+                  <%}%>
+                  <%if(userInfo.website) {%> 
+                    <option value="<%=userInfo.website%>">website</option>
+                  <%}%>
+                  <%if(userInfo.github) {%> 
+                    <option value="<%=userInfo.github%>">github</option>
+                  <%}%>
+                  <%if(userInfo.city) {%> 
+                    <option value="<%=userInfo.city%>">city</option>
+                  <%}%>
+                  <%if(userInfo.state) {%> 
+                    <option value="<%=userInfo.state%>">state</option>
                   <%}%>
                   <!-- control multi select -->
                   <script>
@@ -78,6 +101,30 @@
                   <%if(userInfo.email) {%> 
                     <option value="<%=userInfo.mail%>">Email</option>
                   <%}%>
+                  <%if(userInfo.discord) {%> 
+                    <option value="<%=userInfo.discord%>">Discord</option>
+                  <%}%>
+                  <%if(userInfo.twitter) {%> 
+                    <option value="<%=userInfo.twitter%>">twitter</option>
+                  <%}%>
+                  <%if(userInfo.linkedIn) {%> 
+                    <option value="<%=userInfo.linkedIn%>">linkedIn</option>
+                  <%}%>
+                  <%if(userInfo.facebook) {%> 
+                    <option value="<%=userInfo.facebook%>">facebook</option>
+                  <%}%>
+                  <%if(userInfo.website) {%> 
+                    <option value="<%=userInfo.website%>">website</option>
+                  <%}%>
+                  <%if(userInfo.github) {%> 
+                    <option value="<%=userInfo.github%>">github</option>
+                  <%}%>
+                  <%if(userInfo.city) {%> 
+                    <option value="<%=userInfo.city%>">city</option>
+                  <%}%>
+                  <%if(userInfo.state) {%> 
+                    <option value="<%=userInfo.state%>">state</option>
+                  <%}%>
                   <!-- control multi select -->
                   <script>
                     // let selectTitle = ''
@@ -123,6 +170,30 @@
                   <%}%>
                   <%if(userInfo.email) {%> 
                     <option value="<%=userInfo.mail%>">Email</option>
+                  <%}%>
+                  <%if(userInfo.discord) {%> 
+                    <option value="<%=userInfo.discord%>">Discord</option>
+                  <%}%>
+                  <%if(userInfo.twitter) {%> 
+                    <option value="<%=userInfo.twitter%>">twitter</option>
+                  <%}%>
+                  <%if(userInfo.linkedIn) {%> 
+                    <option value="<%=userInfo.linkedIn%>">linkedIn</option>
+                  <%}%>
+                  <%if(userInfo.facebook) {%> 
+                    <option value="<%=userInfo.facebook%>">facebook</option>
+                  <%}%>
+                  <%if(userInfo.website) {%> 
+                    <option value="<%=userInfo.website%>">website</option>
+                  <%}%>
+                  <%if(userInfo.github) {%> 
+                    <option value="<%=userInfo.github%>">github</option>
+                  <%}%>
+                  <%if(userInfo.city) {%> 
+                    <option value="<%=userInfo.city%>">city</option>
+                  <%}%>
+                  <%if(userInfo.state) {%> 
+                    <option value="<%=userInfo.state%>">state</option>
                   <%}%>
                   <!-- control multi select -->
                   <script>
@@ -173,6 +244,30 @@
                   <%if(userInfo.email) {%> 
                     <option value="<%=userInfo.mail%>">Email</option>
                   <%}%>
+                  <%if(userInfo.discord) {%> 
+                    <option value="<%=userInfo.discord%>">Discord</option>
+                  <%}%>
+                  <%if(userInfo.twitter) {%> 
+                    <option value="<%=userInfo.twitter%>">twitter</option>
+                  <%}%>
+                  <%if(userInfo.linkedIn) {%> 
+                    <option value="<%=userInfo.linkedIn%>">linkedIn</option>
+                  <%}%>
+                  <%if(userInfo.facebook) {%> 
+                    <option value="<%=userInfo.facebook%>">facebook</option>
+                  <%}%>
+                  <%if(userInfo.website) {%> 
+                    <option value="<%=userInfo.website%>">website</option>
+                  <%}%>
+                  <%if(userInfo.github) {%> 
+                    <option value="<%=userInfo.github%>">github</option>
+                  <%}%>
+                  <%if(userInfo.city) {%> 
+                    <option value="<%=userInfo.city%>">city</option>
+                  <%}%>
+                  <%if(userInfo.state) {%> 
+                    <option value="<%=userInfo.state%>">state</option>
+                  <%}%>
                   <!-- control multi select -->
                   <script>
                     // let selectName = ''
@@ -217,8 +312,6 @@
       <div class="canvasControls">
         <a href="#/" class="btn myRadio primary-text previewSwap box btnCorrecto" id="downloadLowRes">Download Low Res.</a>
         <a href="#/" class="btn myRadio primary-text previewSwap box btnCorrecto" id="downloadHighRes">Download High Res.</a>
-        <!-- <a href="#/" class="btn btn-primary myButton spaced">Save to My Account</a> -->
-        <!-- <form action="/post/saveKairde/" method="POST" class="col-3"> -->
           <button class="btn myRadio primary-text previewSwap box btnCorrecto" id="saveKairde" type="button">Save to My Account</button>
         <!-- </form> -->
       </div>
@@ -228,14 +321,3 @@
 
   <script src="../js/contactKairde.js"></script>
   <script src="../js/index.js"></script>
-  <!-- <div class="row">
-    <div class="col">
-      1 of 3
-    </div>
-    <div class="col">
-      2 of 3
-    </div>
-    <div class="col">
-      3 of 3
-    </div>
-  </div> -->

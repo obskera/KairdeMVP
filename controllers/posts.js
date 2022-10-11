@@ -223,9 +223,8 @@ module.exports = {
       userInfo.kairdes = await decrypt(store[0].kairdes, process.env.SECRET_KEY)
       return userInfo
     }
-    // const userInfo = req.user
     
-      //-=-=-=-=-=-//USE THIS AS MODEL TO DECRYPT ALL DATA//-=-=-=-=-=-=-=-//
+    //-=-=-=-=-=-//USE THIS AS MODEL TO DECRYPT ALL DATA//-=-=-=-=-=-=-=-//
       //[title, phone, discord, twitter, linkedIn, faceBook, website, city, state, github, profilePhotoUrl, skills, kairdes]
     
  
@@ -234,6 +233,7 @@ module.exports = {
     //   // console.log(req.user._id)
     //   //returns an array, so use x[0].whatever
     //   const userInfo = await User.find({_id: req.user.id})
+    
     //   //-=-=-=-=-=-//USE THIS AS MODEL TO DECRYPT ALL DATA//-=-=-=-=-=-=-=-//
     //   userInfo[0].twitter = await decrypt(userInfo[0].twitter, process.env.SECRET_KEY)
 
