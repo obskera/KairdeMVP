@@ -12,7 +12,46 @@ module.exports = {
     // const caption = req.body.caption
     // const title = req.body.title
     const userID = req.user.id
+
+       ///new shortlink maker stuff
+       class ShortLinker {
+        constructor() {}
+        poolA = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v' , 'w', 'x', 'y', 'z']
+        poolB = this.poolA.map(letter => {
+            return letter.toUpperCase()
+        })
+        link(length) {
+            let link = ''
+            for (let i = 0; i < length; i++) {
+                const rando = Math.ceil(Math.random() * 25)
+                // console.log(this.rando)
+                let flip = Math.random()
+                flip < 0.5 ? link += this.poolA[rando] : link += this.poolB[rando]
+            }
+            // console.log(link)
+            return link
+        }
+      }
+      let shortLink = new ShortLinker()
+      //just feed it length of url
+      // let genLink = await linkGen()
+      // let link = 'a'
+  
+      async function linkGen() {
+    //  let gen = 'bh'
+        let gen = shortLink.link(4)
+        let check = await Post.findOne({link: `${req.user.userName}-${gen}`})
+          if (check) { 
+            console.log('collision!')
+            linkGen()
+          } else {
+            console.log('unique!')
+            return gen
+          }
+      }
+
     try {
+      let genLink = await linkGen()
       const received = await Post.find({link: link})
       console.log(received[0].image)
       await Post.create({
@@ -23,7 +62,9 @@ module.exports = {
           likes: 0,
           user: userID,
           share: received[0].share,
-          link: received[0].link,
+          //create new link here
+          // link: received[0].link,
+          link: genLink,
           imported: true
       }).then(() => {
         console.log("Kaired has been added!");
