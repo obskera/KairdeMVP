@@ -64,7 +64,7 @@ module.exports = {
           share: received[0].share,
           //create new link here
           // link: received[0].link,
-          link: genLink,
+          link: user.userName+genLink,
           imported: true
       }).then(() => {
         console.log("Kaired has been added!");
