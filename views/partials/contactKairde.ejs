@@ -9,7 +9,7 @@
               <a href="#/" class="btn myRadio previewSwap" id="nameMinus">[-]</a>
               <a href="#/" class="btn myRadio previewSwap" id="namePlus">[+]</a>
             </div>
-            <%if(user.id){ %>
+            <%if(user.id && (userInfo.name || userInfo.title || userInfo.phone || userInfo.mail || userInfo.discord || userInfo.twitter || userInfo.linkedIn || userInfo.facebook || userInfo.website || userInfo.github || userInfo.city || userInfo.state)){ %>
               <div class="">
                 <select id="ddlViewByName" class="btn myRadio selecto previewSwap" aria-label=".form-select-lg example" onchange="onChangeName()">
                   <option selected>Use Saved Info</option>
@@ -22,7 +22,7 @@
                   <%if(userInfo.phone) {%> 
                     <option value="<%=userInfo.phone%>">Phone</option>
                   <%}%>
-                  <%if(userInfo.email) {%> 
+                  <%if(userInfo.mail) {%> 
                     <option value="<%=userInfo.mail%>">Email</option>
                   <%}%>
                   <%if(userInfo.discord) {%> 
@@ -84,7 +84,7 @@
               <a href="#/" class="btn myRadio previewSwap" id="titlePlus">[+]</a>
             </div>
 
-            <%if(user.id){ %>
+            <%if(user.id && (userInfo.name || userInfo.title || userInfo.phone || userInfo.mail || userInfo.discord || userInfo.twitter || userInfo.linkedIn || userInfo.facebook || userInfo.website || userInfo.github || userInfo.city || userInfo.state)){ %>
               <div class="">
                 <!-- <a href="#/" class="btn myRadio primary-text" id="savedNameButton">Use Saved Name</a> -->
                 <select id="ddlViewByTitle" class="btn myRadio selecto mb-3 previewSwap" aria-label=".form-select-lg example" onchange="onChangeTitle()">
@@ -98,7 +98,7 @@
                   <%if(userInfo.phone) {%> 
                     <option value="<%=userInfo.phone%>">Phone</option>
                   <%}%>
-                  <%if(userInfo.email) {%> 
+                  <%if(userInfo.mail) {%> 
                     <option value="<%=userInfo.mail%>">Email</option>
                   <%}%>
                   <%if(userInfo.discord) {%> 
@@ -154,7 +154,7 @@
               <a href="#/" class="btn myRadio previewSwap" id="phoneMinus">[-]</a>
               <a href="#/" class="btn myRadio previewSwap" id="phonePlus">[+]</a>
             </div>
-            <%if(user.id){ %>
+            <%if(user.id && (userInfo.name || userInfo.title || userInfo.phone || userInfo.mail || userInfo.discord || userInfo.twitter || userInfo.linkedIn || userInfo.facebook || userInfo.website || userInfo.github || userInfo.city || userInfo.state)){ %>
               <div class="">
                 <!-- <a href="#/" class="btn myRadio primary-text" id="savedNameButton">Use Saved Name</a> -->
                 <select id="ddlViewByPhone" class="btn myRadio selecto mb-3 previewSwap" aria-label=".form-select-lg example" onchange="onChangePhone()">
@@ -227,7 +227,7 @@
               <a href="#/" class="btn myRadio previewSwap" id="emailMinus">[-]</a>
               <a href="#/" class="btn myRadio previewSwap" id="emailPlus">[+]</a>
             </div>
-            <%if(user.id){ %>
+            <%if(user.id && (userInfo.name || userInfo.title || userInfo.phone || userInfo.mail || userInfo.discord || userInfo.twitter || userInfo.linkedIn || userInfo.facebook || userInfo.website || userInfo.github || userInfo.city || userInfo.state)){ %>
               <div class="">
                 <!-- <a href="#/" class="btn myRadio primary-text" id="savedNameButton">Use Saved Name</a> -->
                 <select id="ddlViewByEmail" class="btn myRadio selecto mb-3 previewSwap" aria-label=".form-select-lg example" onchange="onChangeEmail()">
@@ -241,7 +241,7 @@
                   <%if(userInfo.phone) {%> 
                     <option value="<%=userInfo.phone%>">Phone</option>
                   <%}%>
-                  <%if(userInfo.email) {%> 
+                  <%if(userInfo.mail) {%> 
                     <option value="<%=userInfo.mail%>">Email</option>
                   <%}%>
                   <%if(userInfo.discord) {%> 
