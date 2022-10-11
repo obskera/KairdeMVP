@@ -34,7 +34,7 @@ module.exports = {
       }
       let shortLink = new ShortLinker()
       //just feed it length of url
-      // let genLink = await linkGen()
+      let genLink = await linkGen()
       // let link = 'a'
   
       async function linkGen() {
@@ -51,7 +51,6 @@ module.exports = {
       }
 
     try {
-      let genLink = await linkGen()
       const received = await Post.find({link: link})
       console.log(received[0].image)
       await Post.create({
@@ -64,7 +63,7 @@ module.exports = {
           share: received[0].share,
           //create new link here
           // link: received[0].link,
-          link: user.userName+genLink,
+          link: `${user.userName}${genLink}`,
           imported: true
       }).then(() => {
         console.log("Kaired has been added!");
