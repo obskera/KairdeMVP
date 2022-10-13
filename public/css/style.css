@@ -1,6 +1,6 @@
 /* for mobile, no hover */
 /* @media(hover: hover) and (pointer: fine) { */
-@media (hover: hover) and (any-pointer: coarse){
+@media (hover: hover) and (pointer: coarse){
         /* .btn{
         z-index: 99 !important;
     } */
