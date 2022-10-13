@@ -895,6 +895,8 @@ div#navbarCollapse{
     }
 }
 .btn:focus,.btn:active, a.button:focus, a.button:active, button:active, button:focus{
+    color: white !important;
    outline: none !important;
    /* box-shadow: none !important; */
+   box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.7) !important; 
 }
