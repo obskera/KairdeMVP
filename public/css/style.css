@@ -894,7 +894,7 @@ div#navbarCollapse{
         color: black
     }
 }
-.btn:focus,.btn:active {
+.btn:focus,.btn:active, a.button:focus, a.button:active {
    outline: none !important;
    box-shadow: none !important;
 }
