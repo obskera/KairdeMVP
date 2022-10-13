@@ -920,14 +920,14 @@ div#navbarCollapse{
 /* .btn, a.button{ */
     color: #fff !important;
     /* box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.7) !important;  */
-    box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.7) !important;
+    box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24) !important;
     /* transition: 0.2s all; */
 }
 .btn:focus,.btn:active, a.button:focus, a.button:active, button:active, button:focus{
     color: white !important;
     outline: none !important;
    box-shadow: none !important;
-    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.24) !important; 
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.7) !important; 
 }
 /* CHANGED */
 a.button:active, button:active, .button:active{
