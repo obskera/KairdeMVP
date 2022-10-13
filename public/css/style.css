@@ -926,10 +926,8 @@ a.button:active, button:active, .button:active{
     /* animation-duration: 750ms;
     transform: scale(0.98) !important; */
     /* Scaling button to 0.98 to its original size */
-    box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24) !important;
+    /* box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24) !important;
     /* animation: 0.5s, moveDown30px slidein; */
-    animation-duration: 0.5s;
-    animation-name: pressed;
     /* Lowering the shadow */
     /* transition: 0.2s all; */
   }
