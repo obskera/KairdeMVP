@@ -836,7 +836,7 @@ div#navbarCollapse{
     }
 }
 
-@media(hover: hover) {
+@media(hover: hover) and (pointer: fine) {
     .plusMinus *:hover{
         color:white;
     }
