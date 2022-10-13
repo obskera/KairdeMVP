@@ -72,7 +72,7 @@ app.use("/comment", commentRoutes);
 //new stuff
 client.connect(err => {
   //Connect To Database
-  // const connected = connectDB();
+  connectDB();
   // if(!connect) {console.log('Mongoose ran away'); return false}
   if(err){ console.error(err); return false;}
   // connection to mongo is successful, listen for requests
