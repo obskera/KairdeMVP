@@ -1,6 +1,6 @@
-.btn{
+/* .btn{
     z-index: 99 !important;
-}
+} */
 .test{
     border: 3px solid red;
 }
@@ -199,7 +199,7 @@ body{
 .justifyControls{
     margin-top: 0.75%;
 }
-    .btn:focus, .myRadio:focus{
+    .btn:active, .myRadio:active{
     border: 3px solid rgb(255, 255, 255);
     background-clip: padding-box !important;
 }
