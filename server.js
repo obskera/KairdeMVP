@@ -72,18 +72,13 @@ app.use("/comment", commentRoutes);
 //new stuff
 client.connect(async err => {
   //Connect To Database
-  const connect = await connectDB();
+  await connectDB();
   // if(!connect) {console.log('Mongoose ran away'); return false}
   if(err){ console.error(err); return false;}
-  if (!connect) {
-    console.log('connection failed'); 
-    return false
-  } else {
-      // connection to mongo is successful, listen for requests
-    app.listen(3000, () => {
-      console.log("listening for requests");
-    })
-  }
+  // connection to mongo is successful, listen for requests
+  app.listen(3000, () => {
+    console.log("listening for requests");
+  })
 });
 
 //
