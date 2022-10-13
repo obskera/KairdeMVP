@@ -70,15 +70,20 @@ app.use("/comment", commentRoutes);
 // });
 
 //new stuff
-// client.connect(async err => {
-//   //Connect To Database
-//   connectDB();
-//   // if(!connect) {console.log('Mongoose ran away'); return false}
-//   if(err){ console.error(err); return false;}
-//   // connection to mongo is successful, listen for requests
-//   app.listen(3000, () => {
-//     console.log("listening for requests");
-//   })
-// });
-connectDB(app)
+const dbS = connectDB().then(() => {
+
+
+client.connect(async err => {
+  //Connect To Database
+  // connectDB();
+  // if(!connect) {console.log('Mongoose ran away'); return false}
+  if(err){ console.error(err); return false;}
+  // connection to mongo is successful, listen for requests
+  app.listen(3000, () => {
+    console.log("listening for requests");
+  })
+});
+// connectDB(app)
 //
+
+})
