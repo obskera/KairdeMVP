@@ -24,7 +24,7 @@ const connectDB = async () => {
       useFindAndModify: false,
       useCreateIndex: true,
     }).then(_ => {
-      if (conn) {
+      if (await conn) {
         console.log(`MongoDB Connected: ${conn.connection.host}`);
       } else {
         return new Error('failed to connect')
