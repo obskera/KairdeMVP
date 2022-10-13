@@ -18,12 +18,12 @@ const { MongoClient } = require('mongodb');
 const mongoose = require("mongoose");
 const uri = process.env.DB_STRING;
 const client = new MongoClient(uri);
-const express = require("express");
-const app = express();
+// const express = require("express");
+// const app = express();
 
 
 
-const connectDB = async () => {
+const connectDB = async (app) => {
   try {
     const conn = await mongoose.connect(process.env.DB_STRING, {
       useNewUrlParser: true,

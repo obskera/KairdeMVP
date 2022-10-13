@@ -80,5 +80,5 @@ app.use("/comment", commentRoutes);
 //     console.log("listening for requests");
 //   })
 // });
-connectDB()
+connectDB(app)
 //
