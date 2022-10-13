@@ -25,9 +25,6 @@ require("dotenv").config({ path: "./config/.env" });
 // Passport config
 require("./config/passport")(passport);
 
-//Connect To Database
-const connected = connectDB();
-
 //Using EJS for views
 app.set("view engine", "ejs");
 
@@ -74,6 +71,8 @@ app.use("/comment", commentRoutes);
 
 //new stuff
 client.connect(err => {
+  //Connect To Database
+  const connected = connectDB();
   if(!connect) {console.log('Mongoose ran away'); return false}
   if(err){ console.error(err); return false;}
   // connection to mongo is successful, listen for requests
