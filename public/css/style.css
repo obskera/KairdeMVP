@@ -836,7 +836,7 @@ div#navbarCollapse{
     }
 }
 
-/* @media(hover: hover) and (pointer: fine) {
+@media(hover: hover) and (pointer: fine) {
     .plusMinus *:hover{
         color:white;
     }
@@ -893,7 +893,7 @@ div#navbarCollapse{
     .button-correction:hover{
         color: black
     }
-} */
+}
 
 
 
@@ -951,7 +951,7 @@ a.button:active, button:active, .button:active{
     box-shadow: 0 9px #999;
   }
   
-  .btn:hover {background-color: inherit;}
+  /* .btn:hover {background-color: inherit;} */
   
   .btn:active {
     /* background-color: #3e8e41; */
