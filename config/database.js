@@ -16,6 +16,11 @@
 // module.exports = connectDB;
 
 const mongoose = require("mongoose");
+const uri = process.env.DB_STRING;
+const client = new MongoClient(uri);
+
+
+
 const connectDB = async () => {
   try {
     const conn = await mongoose.connect(process.env.DB_STRING, {
@@ -23,9 +28,15 @@ const connectDB = async () => {
       useUnifiedTopology: true,
       useFindAndModify: false,
       useCreateIndex: true,
-    }).then(_ => {
-        console.log(`MongoDB Connected: ${conn.connection.host}`);
     })
+    console.log(`MongoDB Connected: ${conn.connection.host}`);
+    client.connect(err => {
+      if(err){ console.error(err); return false;}
+      // connection to mongo is successful, listen for requests
+      app.listen(3000, () => {
+          console.log("listening for requests");
+      })
+    });
    
   } catch (err) {
     console.error(err);
