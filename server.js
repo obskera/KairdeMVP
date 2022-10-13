@@ -14,7 +14,7 @@ const MongoStore = require("connect-mongo")(session);
 const methodOverride = require("method-override");
 const flash = require("express-flash");
 const logger = require("morgan");
-// const connectDB = require("./config/database");
+const connectDB = require("./config/database");
 const mainRoutes = require("./routes/main");
 const postRoutes = require("./routes/posts");
 const commentRoutes = require("./routes/comments");
@@ -26,7 +26,7 @@ require("dotenv").config({ path: "./config/.env" });
 require("./config/passport")(passport);
 
 //Connect To Database
-// connectDB();
+const connected = connectDB();
 
 //Using EJS for views
 app.set("view engine", "ejs");
@@ -74,6 +74,7 @@ app.use("/comment", commentRoutes);
 
 //new stuff
 client.connect(err => {
+  if(!connect) {console.log('Mongoose ran away'); return false}
   if(err){ console.error(err); return false;}
   // connection to mongo is successful, listen for requests
   app.listen(3000, () => {
