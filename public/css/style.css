@@ -55,14 +55,14 @@ body{
     text-decoration: none;
     cursor: auto; 
 }
-.navButton:hover {
+/* .navButton:hover {
     border-radius: 25px;
     border: 3px solid black;
     padding: 10px;
     color: rgb(137, 175, 105);
     text-decoration: none;
     cursor: auto;
-}
+} */
 .myButton {
     border-radius: 25px;
     border: 3px solid black;
@@ -72,14 +72,14 @@ body{
     text-decoration: none;
     cursor: auto; 
 }
-.myButton:hover {
+/* .myButton:hover {
     border-radius: 25px;
     border: 3px solid black;
     padding: 10px;
     color: rgb(137, 175, 105);
     text-decoration: none;
     cursor: auto; 
-}
+} */
 /* .myButtonSecondary {
     border-radius: 25px;
     border: 3px solid black;
@@ -137,9 +137,9 @@ body{
     color:black;
     text-decoration: none;
 }
-.plusMinus *:hover{
+/* .plusMinus *:hover{
     color:white;
-}
+} */
 .controlBox{
     display: flex;
     flex-direction: row;
@@ -178,12 +178,12 @@ body{
 .primary-text{
     color: black;
 }
-.primary-text:hover{
+/* .primary-text:hover{
     color: white;
-}
-.button-correction:hover{
+} */
+/* .button-correction:hover{
     color: black
-}
+} */
 .selecto{
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -193,9 +193,9 @@ body{
     color: black;
     border: 3px solid black;
 }
-.selecto:hover{
+/* .selecto:hover{
     color: white !important;
-}
+} */
 .justifyControls{
     margin-top: 0.75%;
 }
@@ -223,55 +223,54 @@ select.button, button.button, a.button {
     background-clip: content-box, border-box;
     color: #fff !important;
 }
-select.button:hover, button.button:hover, a.button:hover {
+/* select.button:hover, button.button:hover, a.button:hover {
     box-shadow: none;
     color: black;
-}
+} */
 .previewSwap{
     background: rgb(33, 53, 85);
     color: #fff;
 }
-.previewSwap:hover{
+/* .previewSwap:hover{
     background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), linear-gradient(101deg, rgb(07, 150, 164), rgb(0,38,163));
     color: rgb(255, 255, 255) !important;
-}
+} */
 .previewSwapSquare{
 
     border-radius: 0%;
     background: rgb(33, 53, 85);
     color: #fff;
   }
-  .previewSwapSquare:hover{
+  /* .previewSwapSquare:hover{
     border-radius: 0%;
     background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), linear-gradient(101deg, rgb(07, 150, 164), rgb(0,38,163));
     color: rgb(255, 255, 255) !important;
-    /* border: 4px solid black; */
-}
+    } */
 .previewSwapDanger{
     background: rgb(33, 53, 85);;
     color: #fff;
 }
-.previewSwapDanger:hover{
+/* .previewSwapDanger:hover{
     background-color: red;
     color: rgb(255, 255, 255) !important;
-}
+} */
   
 .previewSwapAlt{
     background: rgb(33, 53, 85);
     color: #fff;
   }
-  .previewSwapAlt:hover{
+  /* .previewSwapAlt:hover{
     background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), linear-gradient(38deg, rgb(0,38,163), rgb(07, 150, 164));
     color: rgb(231, 230, 246) !important;
-}
+} */
 .previewSwapAlt2{
     background: rgb(33, 53, 85);
     color: #fff;
   }
-  .previewSwapAlt2:hover{
+  /* .previewSwapAlt2:hover{
     background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), linear-gradient(73deg, rgb(0,38,163), rgb(07, 150, 164));
     color: rgb(231, 230, 246) !important;
-}
+} */
 .myFormContainer{
     background-color: #fff;
     overflow:hidden;
@@ -340,9 +339,9 @@ margin: 0%;
 .wbg-image{
     max-width: 300px;
 }
-.wbg-image:hover, .wbg-image:focus{
+/* .wbg-image:hover, .wbg-image:focus{
     max-width: 80%;
-}
+} */
 .wbg-container{
     display: flex;
     flex-direction: column;
@@ -464,9 +463,9 @@ div.spinnerBg {
     animation-iteration-count: infinite;
     animation-timing-function: linear; 
 }
-div.spinnerBg:hover{
+/* div.spinnerBg:hover{
     background: linear-gradient(101deg, rgb(07, 150, 164), rgb(0,38,163));
-}
+} */
 @keyframes spin {
     from {
         transform:rotate(0deg);
@@ -538,9 +537,9 @@ span.borderPaddingDef{
 .imageView{
     width: 392px;
 }
-.imageView:hover{
+/* .imageView:hover{
     width: 80%;
-}
+} */
 .boxG{
     border-radius: 25px;
     border: 3px solid black;
@@ -548,11 +547,11 @@ span.borderPaddingDef{
     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.7); 
     margin: 2%;
 }
-.boxG:hover{
+/* .boxG:hover{
     color: #fff;
     background: linear-gradient(101deg, rgb(07, 150, 164), rgb(0,38,163));
     opacity: 95%;
-}
+} */
 .width90{
     width: 90%;
 }
@@ -577,11 +576,11 @@ span.borderPaddingDef{
     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.7); 
     margin: 2%;
 }
-.boxW:hover{
+/* .boxW:hover{
     color: #fff;
     background: repeating-linear-gradient(45deg, rgb(243, 214, 0), rgb(0, 0, 0) 10px,rgb(243, 214, 0)10px, rgb(0, 0, 0,) 20px) !important;
     opacity: 95%;
-}
+} */
 .feed1{
     max-width: 90%; 
     margin-left: 5%;
@@ -874,3 +873,55 @@ div#navbarCollapse{
         border-radius: 0%;
     }
 }
+@media (hover: hover) {
+    .boxG:hover{
+        color: #fff;
+        background: linear-gradient(101deg, rgb(07, 150, 164), rgb(0,38,163));
+        opacity: 95%;
+    }
+    button:hover {
+        background: linear-gradient(101deg, rgb(07, 150, 164), rgb(0,38,163));
+        /* background-color: blue; */
+    }
+    div.spinnerBg:hover{
+        background: linear-gradient(101deg, rgb(07, 150, 164), rgb(0,38,163));
+    }
+    .previewSwapAlt2:hover{
+        background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), linear-gradient(73deg, rgb(0,38,163), rgb(07, 150, 164));
+        color: rgb(231, 230, 246) !important;
+    }
+    .previewSwapAlt:hover{
+        background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), linear-gradient(38deg, rgb(0,38,163), rgb(07, 150, 164));
+        color: rgb(231, 230, 246) !important;
+    }
+    .previewSwapDanger:hover{
+        background-color: red;
+        color: rgb(255, 255, 255) !important;
+    }
+    .previewSwapSquare:hover{
+        border-radius: 0%;
+        background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), linear-gradient(101deg, rgb(07, 150, 164), rgb(0,38,163));
+        color: rgb(255, 255, 255) !important;
+    }
+    .previewSwap:hover{
+        background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), linear-gradient(101deg, rgb(07, 150, 164), rgb(0,38,163));
+        color: rgb(255, 255, 255) !important;
+    }
+    select.button:hover, button.button:hover, a.button:hover {
+        box-shadow: none;
+        color: black;
+    }
+    .selecto:hover{
+        color: white !important;
+    }
+    .button-correction:hover{
+        color: black
+    }
+    .primary-text:hover{
+        color: white;
+    }
+    .plusMinus *:hover{
+        color:white;
+    }
+}
+
