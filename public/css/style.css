@@ -904,7 +904,7 @@ div#navbarCollapse{
    /* box-shadow: none !important; */
    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.7) !important; 
 }
-.button:active {
+a.button:active, button:active, .button:active{
     background-color: rgb(34, 54, 84);
     box-shadow: 0 5px #666;
     transform: translateY(4px);
