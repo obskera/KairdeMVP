@@ -12,7 +12,7 @@
             <%if(user.id && (userInfo.name || userInfo.title || userInfo.phone || userInfo.mail || userInfo.discord || userInfo.twitter || userInfo.linkedIn || userInfo.facebook || userInfo.website || userInfo.github || userInfo.city || userInfo.state)){ %>
               <div class="">
                 <!-- May need to merge methods? -->
-                <select id="ddlViewByName" class="btn myRadio selecto previewSwap unpress" aria-label=".form-select-lg example" onchange="onChangeName()" onclick="this.blur()">
+                <select id="ddlViewByName" class="btn myRadio selecto previewSwap unpress" aria-label=".form-select-lg example" onchange="onChangeName()">
                   <option selected>Use Saved Info</option>
                   <%if(userInfo.name) {%> 
                     <option value="<%=userInfo.name%>">Name</option>
@@ -88,7 +88,7 @@
             <%if(user.id && (userInfo.name || userInfo.title || userInfo.phone || userInfo.mail || userInfo.discord || userInfo.twitter || userInfo.linkedIn || userInfo.facebook || userInfo.website || userInfo.github || userInfo.city || userInfo.state)){ %>
               <div class="">
                 <!-- <a href="#/" class="btn myRadio primary-text" id="savedNameButton">Use Saved Name</a> -->
-                <select id="ddlViewByTitle" class="btn myRadio selecto mb-3 previewSwap unpress" aria-label=".form-select-lg example" onchange="onChangeTitle()" onclick="this.blur()">
+                <select id="ddlViewByTitle" class="btn myRadio selecto mb-3 previewSwap unpress" aria-label=".form-select-lg example" onchange="onChangeTitle()">
                   <option selected>Use Saved Info</option>
                   <%if(userInfo.name) {%> 
                     <option value="<%=userInfo.name%>">Name</option>
@@ -158,7 +158,7 @@
             <%if(user.id && (userInfo.name || userInfo.title || userInfo.phone || userInfo.mail || userInfo.discord || userInfo.twitter || userInfo.linkedIn || userInfo.facebook || userInfo.website || userInfo.github || userInfo.city || userInfo.state)){ %>
               <div class="">
                 <!-- <a href="#/" class="btn myRadio primary-text" id="savedNameButton">Use Saved Name</a> -->
-                <select id="ddlViewByPhone" class="btn myRadio selecto mb-3 previewSwap unpress" aria-label=".form-select-lg example" onchange="onChangePhone()" onclick="this.blur()">
+                <select id="ddlViewByPhone" class="btn myRadio selecto mb-3 previewSwap unpress" aria-label=".form-select-lg example" onchange="onChangePhone()">
                   <option selected>Use Saved Info</option>
                   <%if(userInfo.name) {%> 
                     <option value="<%=userInfo.name%>">Name</option>
@@ -231,7 +231,7 @@
             <%if(user.id && (userInfo.name || userInfo.title || userInfo.phone || userInfo.mail || userInfo.discord || userInfo.twitter || userInfo.linkedIn || userInfo.facebook || userInfo.website || userInfo.github || userInfo.city || userInfo.state)){ %>
               <div class="">
                 <!-- <a href="#/" class="btn myRadio primary-text" id="savedNameButton">Use Saved Name</a> -->
-                <select id="ddlViewByEmail" class="btn myRadio selecto mb-3 previewSwap unpress" aria-label=".form-select-lg example" onchange="onChangeEmail()" onclick="this.blur()">
+                <select id="ddlViewByEmail" class="btn myRadio selecto mb-3 previewSwap unpress" aria-label=".form-select-lg example" onchange="onChangeEmail()">
                   <option selected>Use Saved Info</option>
                   <%if(userInfo.name) {%> 
                     <option value="<%=userInfo.name%>">Name</option>
