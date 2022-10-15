@@ -1,9 +1,9 @@
 /* for mobile, no hover */
 /* @media(hover: hover) and (pointer: fine) { */
 
-        /* .btn{
-        z-index: 99 !important;
-    } */
+.btn{
+    z-index: 45 !important;
+}
 .test{
     border: 3px solid red;
 }
