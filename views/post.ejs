@@ -13,14 +13,14 @@
       <!-- <a href="<%=post.image%>" download="post.title">Download</a> -->
     
       <div class="row buttonControlPost box-small" style="display: flex; flex-direction: row; justify-content: center; align-items: center; text-align: center;">
-        <button class="btn myRadio primary-text previewSwap box btnCorrecto lineBtn lineBtn2" type="button" onclick="forceDown()">Download</button>
+        <button class="btn myRadio primary-text previewSwap box btnCorrecto lineBtn lineBtn2 unpress" type="button" onclick="forceDown(); this.blur();">Download</button>
         <%if(post.user == user.id){ %>
         <form
           action="/post/deletePost/<%= post.id %>?_method=DELETE"
           method="POST"
           class="col-3 lineBtn trashMatch"
         >
-          <button class="btn myRadio primary-text previewSwap box btnCorrecto fa fa-trash box trashCorrecto" type="submit"></button>
+          <button class="btn myRadio primary-text previewSwap box btnCorrecto fa fa-trash box trashCorrecto unpress" type="submit" onclick="this.blur()"></button>
         </form>
         <%}%>
       </div>
@@ -31,7 +31,7 @@
       <h2 class="marginR">Notes </h2>
       <form action="/comment/createComment/<%=post._id%>" method="POST" class="categoryForm justify-content-center mLeft">
         <input type="text" class="form-control" id="comment" name="comment" style="max-width: 70%; margin-right: 0.3%;">
-        <button type="submit" class="btn myRadio primary-text previewSwap box btnCorrecto">Save</button>
+        <button type="submit" class="btn myRadio primary-text previewSwap box btnCorrecto unpress" onclick="this.blur()">Save</button>
       </form>
       <div class="commentULHolder noShrink">
         <ul class="no-list-style correctoAligno noShrink">
@@ -47,7 +47,7 @@
                   class="col-3 trashCorrecto3 smallTrash"
                 >
                   <input type="text" name="post" style="display: none" value="<%=comments[i].post%>">
-                  <button class="btn myRadio primary-text previewSwap box btnCorrecto fa fa-trash box trashCorrecto2" type="submit"></button>
+                  <button class="btn myRadio primary-text previewSwap box btnCorrecto fa fa-trash box trashCorrecto2 unpress" type="submit" onclick="this.blur()"></button>
                 </form>
                 <%}%>
             </li>
