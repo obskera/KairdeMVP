@@ -1,4 +1,5 @@
 //handle unpress simulate animation
+alert('connected')
 const elements = document.querySelectorAll('.unpress')
 const dummy = document.getElementById('dummy')
 Array.from(elements).forEach(function(ele) {
