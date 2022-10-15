@@ -838,32 +838,33 @@ div#navbarCollapse{
     }
 }
 
+/* @media(hover: hover) and (pointer: fine) { */
 @media(hover: hover) and (pointer: fine) {
     .plusMinus *:hover{
         color:white;
     }
-    .primary-text:hover{
-    color: white;
+        .primary-text:hover{
+        color: white;
     } 
     .button-correction:hover{
-    color: black
+        color: black
     } 
     .boxW:hover{
-    color: #fff;
-    background: repeating-linear-gradient(45deg, rgb(243, 214, 0), rgb(0, 0, 0) 10px,rgb(243, 214, 0)10px, rgb(0, 0, 0,) 20px) !important;
-    opacity: 95%;
+        color: #fff;
+        background: repeating-linear-gradient(45deg, rgb(243, 214, 0), rgb(0, 0, 0) 10px,rgb(243, 214, 0)10px, rgb(0, 0, 0,) 20px) !important;
+        opacity: 95%;
     }
     .boxG:hover{
-    color: #fff;
-    background: linear-gradient(101deg, rgb(07, 150, 164), rgb(0,38,163));
-    opacity: 95%;
+        color: #fff;
+        background: linear-gradient(101deg, rgb(07, 150, 164), rgb(0,38,163));
+        opacity: 95%;
     }
     div.spinnerBg:hover{
-    background: linear-gradient(101deg, rgb(07, 150, 164), rgb(0,38,163));
+        background: linear-gradient(101deg, rgb(07, 150, 164), rgb(0,38,163));
     }
     .previewSwapAlt:hover{
-    background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), linear-gradient(38deg, rgb(0,38,163), rgb(07, 150, 164));
-    color: rgb(231, 230, 246) !important;
+        background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), linear-gradient(38deg, rgb(0,38,163), rgb(07, 150, 164));
+        color: rgb(231, 230, 246) !important;
     }
     .previewSwapAlt2:hover{
         background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), linear-gradient(73deg, rgb(0,38,163), rgb(07, 150, 164));
@@ -879,8 +880,8 @@ div#navbarCollapse{
         color: rgb(255, 255, 255) !important;
     }
     .previewSwap:hover{
-    background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), linear-gradient(300deg, rgb(07, 150, 164), rgb(0,38,163));
-    color: rgb(255, 255, 255) !important;
+        background-image: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 0)), linear-gradient(300deg, rgb(07, 150, 164), rgb(0,38,163));
+        color: rgb(255, 255, 255) !important;
     }
     select.button:hover, button.button:hover, a.button:hover {
     box-shadow: none;
