@@ -1,11 +1,11 @@
 //handle unpress simulate animation
 // alert('connected')
-let elements = document.querySelectorAll('.unpress2')
+let elements2 = document.querySelectorAll('.unpress2')
 // if (!elements) { 
 //   const elements = document.querySelectorAll('.unpress')
 // }
 // const dummy = document.getElementById('dummy')
-Array.from(elements).forEach(function(ele) {
+Array.from(elements2).forEach(function(ele) {
   ele.addEventListener('click', () => {
     ele.style.color = 'black'
     setTimeout(() => {
