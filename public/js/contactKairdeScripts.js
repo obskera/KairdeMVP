@@ -59,13 +59,13 @@ nameFielder.addEventListener('change', () => {
 })
 
 //new button test
-const elements = document.querySelectorAll('.unpress')
-const dummy = document.getElementById('dummy')
-Array.from(elements).forEach(function(ele) {
-  ele.addEventListener('click', () => {
-    setTimeout(() => {
-      dummy.focus()
-      console.log('success!', dummy)
-    }, 500)
-  })
-});
+// const elements = document.querySelectorAll('.unpress')
+// const dummy = document.getElementById('dummy')
+// Array.from(elements).forEach(function(ele) {
+//   ele.addEventListener('click', () => {
+//     setTimeout(() => {
+//       dummy.focus()
+//       console.log('success!', dummy)
+//     }, 500)
+//   })
+// });
