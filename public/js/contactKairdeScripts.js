@@ -60,11 +60,12 @@ nameFielder.addEventListener('change', () => {
 
 //new button test
 const elements = document.querySelectorAll('.unpress')
+const dummy = document.getElementById('dummy')
 Array.from(elements).forEach(function(ele) {
   ele.addEventListener('click', () => {
     setTimeout(() => {
-      console.log('success!')
-      ele.blur()
-    }, 100)
+      dummy.focus()
+      console.log('success!', dummy)
+    }, 500)
   })
 });
