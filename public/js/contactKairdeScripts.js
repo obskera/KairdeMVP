@@ -1,3 +1,4 @@
+const { render } = require("ejs")
 
 function onChangeEmail() {
     let value = document.getElementById('ddlViewByEmail').value
@@ -9,6 +10,13 @@ function onChangeEmail() {
     }
     renderPreview(false)
 }
+const nameFielder = document.getElementById('name')
+nameFielder.addEventListener('change', () => {
+  renderPreview(false)
+})
+
+
+
 function onChangePhone() {
     let value = document.getElementById('ddlViewByPhone').value
     const nameTarget = document.getElementById('phone')
@@ -19,12 +27,21 @@ function onChangePhone() {
     }
     renderPreview(false)
 }
+const phoneFielder = document.getElementById('phone')
+nameFielder.addEventListener('change', () => {
+  renderPreview(false)
+})
+
 function onChangeTitle() {
     let value = document.getElementById('ddlViewByTitle').value
     const nameTarget = document.getElementById('title')
     nameTarget.value = value
     renderPreview(false)
 }
+const titleFielder = document.getElementById('title')
+nameFielder.addEventListener('change', () => {
+  renderPreview(false)
+})
 
 function onChangeName() {
     let value = document.getElementById('ddlViewByName').value
@@ -36,3 +53,7 @@ function onChangeName() {
     }
     renderPreview(false)
 }
+const emailFielder = document.getElementById('email')
+nameFielder.addEventListener('change', () => {
+  renderPreview(false)
+})

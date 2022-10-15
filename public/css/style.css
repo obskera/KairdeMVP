@@ -905,7 +905,7 @@ div#navbarCollapse{
 
 
 /* new stuff */
-@keyframes pressed {
+/* @keyframes pressed {
     from {
       width: 100%;
     }
@@ -915,37 +915,38 @@ div#navbarCollapse{
     to{
         width: 100%;
     }
-  }
+  } */
 
 .btn, a.button, button{
 /* .btn, a.button{ */
-    color: #fff !important;
+    /* color: #fff !important; */
     /* box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.7) !important;  */
-    box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24) !important;
+    /* box-shadow: 7px 6px 28px 1px rgba(0, 0, 0, 0.24) !important; */
     /* transition: 0.2s all; */
 }
-.btn:focus,.btn:active, a.button:focus, a.button:active, button:active, button:focus{
-    color: white !important;
+/* .btn:focus,.btn:active, a.button:focus, a.button:active, button:active, button:focus{ */
+    /* color: white !important; */
     /* outline: none !important;
    box-shadow: none !important; */
-    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.7) !important; 
-}
+    /* box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.7) !important; 
+    
+} */
 /* CHANGED */
-a.button:active, button:active, .button:active{
-    /* a.button:active, .button:active{ */
+/* a.button:active, button:active, .button:active{
+
     background-color: rgb(34, 54, 84);
     box-shadow: 0 5px #666;
     transform: translateY(10px);
     animation-duration: 750ms;
     transform: scale(0.98) !important;
-    /* Scaling button to 0.98 to its original size */
+  
     box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24) !important;
     animation: 0.5s, pressed;
-    /* Lowering the shadow */
+ 
     transition: 0.2s all;
     box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.24) !important;
-  }
-  .btn {
+  } */
+  /* .btn {
     padding: 10px 20px;
     font-size: 24px;
     text-align: center;
@@ -956,15 +957,15 @@ a.button:active, button:active, .button:active{
     border: none;
     border-radius: 15px;
     box-shadow: 0 9px #999;
-  }
+  } */
   
   /* .btn:hover {background-color: inherit;} */
   
-.btn:active {
+/* .btn:active {
     background-color: #0483aa;
     box-shadow: 0 5px #666;
     transform: translateY(4px);
-  }
+  } */
 .z90{
     z-index: 90 !important;
 }
