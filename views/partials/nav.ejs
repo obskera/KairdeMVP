@@ -9,20 +9,20 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav">
                 <% if (typeof user != 'undefined') {%>
-                <a href="/profile/contactKairde" class="nav-item active navButton nav-item-push previewSwapSquare unpress">Make</a>
-                <a href="/profile" class="nav-item active navButton nav-item-push previewSwapSquare unpress">Import</a>
-                <a href="/feed" class="nav-item active navButton nav-item-push previewSwapSquare unpress">Saved</a>
+                <a href="/profile/contactKairde" class="nav-item active navButton nav-item-push previewSwapSquare unpress2" onclick="this.blur()">Make</a>
+                <a href="/profile" class="nav-item active navButton nav-item-push previewSwapSquare unpress2" onclick="this.blur()">Import</a>
+                <a href="/feed" class="nav-item active navButton nav-item-push previewSwapSquare unpress2" onclick="this.blur()">Saved</a>
                 <%}%>
                 <%if (typeof user == 'undefined') { %>
-                    <a href="/signup" class="nav-item navButton previewSwapSquare nav-item-push unpress" style="display: none;" id="registerBtn">Register</a>
-                    <a href="/login" class="nav-item navButton previewSwapSquare nav-item-push unpress" style="display: none;" id="loginBtn">Login</a>
+                    <a href="/signup" class="nav-item navButton previewSwapSquare nav-item-push unpress2" style="display: none;" id="registerBtn" onclick="this.blur()">Register</a>
+                    <a href="/login" class="nav-item navButton previewSwapSquare nav-item-push unpress2" style="display: none;" id="loginBtn" onclick="this.blur()">Login</a>
                 <% } else { %>
                     <%if (typeof user != 'undefined') { %>
-                        <a href="/settings" class="nav-item active navButton previewSwapSquare nav-item-push unpress" tabindex="-1">My Info</a>
+                        <a href="/settings" class="nav-item active navButton previewSwapSquare nav-item-push unpress2" tabindex="-1" onclick="this.blur()">My Info</a>
                         <%}%>
-                    <a href="/logout" class="nav-item navButton nav-item-push previewSwapSquare unpress" tabindex="-4">Logout</a>
+                    <a href="/logout" class="nav-item navButton nav-item-push previewSwapSquare unpress2" tabindex="-4" onclick="this.blur()">Logout</a>
                 <% }%>
-                 <a href="#/" class="nav-item active navButton nav-item-push previewSwapSquare unpress" id="cookiesDisclaimerButton"><i class="fa-solid fa-cookie"></i></a>
+                 <a href="#/" class="nav-item active navButton nav-item-push previewSwapSquare unpress2" id="cookiesDisclaimerButton" onclick="this.blur()"><i class="fa-solid fa-cookie"></i></a>
                 </div>
                 <div class="navbar-nav ms-auto">
             
@@ -48,5 +48,5 @@
 
         // } 
     </script>
-    <!-- <script src="../js/press.js"></script> -->
+    <script src="../js/press2.js"></script>
 </nav>
