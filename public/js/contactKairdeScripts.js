@@ -1,4 +1,4 @@
-const { render } = require("ejs")
+// const { render } = require("ejs")
 
 function onChangeEmail() {
     let value = document.getElementById('ddlViewByEmail').value
