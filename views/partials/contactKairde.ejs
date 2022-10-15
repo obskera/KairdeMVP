@@ -6,12 +6,13 @@
           <input type="text" name="name" id="name">
           <div class="controlBox">
             <div class="plusMinus">
-              <a href="#/" class="btn myRadio previewSwap" id="nameMinus">[-]</a>
-              <a href="#/" class="btn myRadio previewSwap" id="namePlus">[+]</a>
+              <a href="#/" class="btn myRadio previewSwap unpress" id="nameMinus" onclick="this.blur()">[-]</a>
+              <a href="#/" class="btn myRadio previewSwap unpress" id="namePlus" onclick="this.blur()">[+]</a>
             </div>
             <%if(user.id && (userInfo.name || userInfo.title || userInfo.phone || userInfo.mail || userInfo.discord || userInfo.twitter || userInfo.linkedIn || userInfo.facebook || userInfo.website || userInfo.github || userInfo.city || userInfo.state)){ %>
               <div class="">
-                <select id="ddlViewByName" class="btn myRadio selecto previewSwap" aria-label=".form-select-lg example" onchange="onChangeName()">
+                <!-- May need to merge methods? -->
+                <select id="ddlViewByName" class="btn myRadio selecto previewSwap unpress" aria-label=".form-select-lg example" onchange="onChangeName()" onclick="this.blur()">
                   <option selected>Use Saved Info</option>
                   <%if(userInfo.name) {%> 
                     <option value="<%=userInfo.name%>">Name</option>
@@ -69,9 +70,9 @@
             <%}%>
 
             <div class="justifyControls">
-              <a href="#/" class="btn myRadio primary-text previewSwap" id="nameLeft">Left</a>
-              <a href="#/" class="btn myRadio primary-text previewSwap" id="nameCenter">Center</a>
-              <a href="#/" class="btn myRadio primary-text previewSwap" id="nameRight">Right</a>
+              <a href="#/" class="btn myRadio primary-text previewSwap unpress" id="nameLeft" onclick="this.blur()">Left</a>
+              <a href="#/" class="btn myRadio primary-text previewSwap unpress" id="nameCenter" onclick="this.blur()">Center</a>
+              <a href="#/" class="btn myRadio primary-text previewSwap unpress" id="nameRight" onclick="this.blur()">Right</a>
             </div>
           </div>
       
@@ -80,14 +81,14 @@
 
           <div class="controlBox">
             <div class="plusMinus">
-              <a href="#/" class="btn myRadio previewSwap" id="titleMinus">[-]</a>
-              <a href="#/" class="btn myRadio previewSwap" id="titlePlus">[+]</a>
+              <a href="#/" class="btn myRadio previewSwap unpress" id="titleMinus" onclick="this.blur()">[-]</a>
+              <a href="#/" class="btn myRadio previewSwap unpress" id="titlePlus" onclick="this.blur()">[+]</a>
             </div>
 
             <%if(user.id && (userInfo.name || userInfo.title || userInfo.phone || userInfo.mail || userInfo.discord || userInfo.twitter || userInfo.linkedIn || userInfo.facebook || userInfo.website || userInfo.github || userInfo.city || userInfo.state)){ %>
               <div class="">
                 <!-- <a href="#/" class="btn myRadio primary-text" id="savedNameButton">Use Saved Name</a> -->
-                <select id="ddlViewByTitle" class="btn myRadio selecto mb-3 previewSwap" aria-label=".form-select-lg example" onchange="onChangeTitle()">
+                <select id="ddlViewByTitle" class="btn myRadio selecto mb-3 previewSwap unpress" aria-label=".form-select-lg example" onchange="onChangeTitle()" onclick="this.blur()">
                   <option selected>Use Saved Info</option>
                   <%if(userInfo.name) {%> 
                     <option value="<%=userInfo.name%>">Name</option>
@@ -141,9 +142,9 @@
             <%}%>
             
             <div class="justifyControls">
-              <a href="#/" class="btn myRadio primary-text previewSwap" id="titleLeft">Left</a>
-              <a href="#/" class="btn myRadio primary-text previewSwap" id="titleCenter">Center</a>
-              <a href="#/" class="btn myRadio primary-text previewSwap" id="titleRight">Right</a>
+              <a href="#/" class="btn myRadio primary-text previewSwap unpress" id="titleLeft" onclick="this.blur()">Left</a>
+              <a href="#/" class="btn myRadio primary-text previewSwap unpress" id="titleCenter" onclick="this.blur()">Center</a>
+              <a href="#/" class="btn myRadio primary-text previewSwap unpress" id="titleRight" onclick="this.blur()">Right</a>
             </div>
           </div>
        
@@ -151,13 +152,13 @@
           <input type="text" name="phone" id="phone">
           <div class="controlBox">
             <div class="plusMinus">
-              <a href="#/" class="btn myRadio previewSwap" id="phoneMinus">[-]</a>
-              <a href="#/" class="btn myRadio previewSwap" id="phonePlus">[+]</a>
+              <a href="#/" class="btn myRadio previewSwap unpress" id="phoneMinus" onclick="this.blur()">[-]</a>
+              <a href="#/" class="btn myRadio previewSwap unpress" id="phonePlus" onclick="this.blur()">[+]</a>
             </div>
             <%if(user.id && (userInfo.name || userInfo.title || userInfo.phone || userInfo.mail || userInfo.discord || userInfo.twitter || userInfo.linkedIn || userInfo.facebook || userInfo.website || userInfo.github || userInfo.city || userInfo.state)){ %>
               <div class="">
                 <!-- <a href="#/" class="btn myRadio primary-text" id="savedNameButton">Use Saved Name</a> -->
-                <select id="ddlViewByPhone" class="btn myRadio selecto mb-3 previewSwap" aria-label=".form-select-lg example" onchange="onChangePhone()">
+                <select id="ddlViewByPhone" class="btn myRadio selecto mb-3 previewSwap unpress" aria-label=".form-select-lg example" onchange="onChangePhone()" onclick="this.blur()">
                   <option selected>Use Saved Info</option>
                   <%if(userInfo.name) {%> 
                     <option value="<%=userInfo.name%>">Name</option>
@@ -214,9 +215,9 @@
               </div>
             <%}%>
             <div class="justifyControls">
-              <a href="#/" class="btn myRadio primary-text previewSwap" id="phoneLeft">Left</a>
-              <a href="#/" class="btn myRadio primary-text previewSwap" id="phoneCenter">Center</a>
-              <a href="#/" class="btn myRadio primary-text previewSwap" id="phoneRight">Right</a>
+              <a href="#/" class="btn myRadio primary-text previewSwap unpress" id="phoneLeft" onclick="this.blur()">Left</a>
+              <a href="#/" class="btn myRadio primary-text previewSwap unpress" id="phoneCenter" onclick="this.blur()">Center</a>
+              <a href="#/" class="btn myRadio primary-text previewSwap unpress" id="phoneRight" onclick="this.blur()">Right</a>
             </div>
           </div>
 
@@ -224,13 +225,13 @@
           <input type="text" name="email" id="email">
           <div class="controlBox">
             <div class="plusMinus">
-              <a href="#/" class="btn myRadio previewSwap" id="emailMinus">[-]</a>
-              <a href="#/" class="btn myRadio previewSwap" id="emailPlus">[+]</a>
+              <a href="#/" class="btn myRadio previewSwap unpress" id="emailMinus" onclick="this.blur()">[-]</a>
+              <a href="#/" class="btn myRadio previewSwap unpress" id="emailPlus" onclick="this.blur()">[+]</a>
             </div>
             <%if(user.id && (userInfo.name || userInfo.title || userInfo.phone || userInfo.mail || userInfo.discord || userInfo.twitter || userInfo.linkedIn || userInfo.facebook || userInfo.website || userInfo.github || userInfo.city || userInfo.state)){ %>
               <div class="">
                 <!-- <a href="#/" class="btn myRadio primary-text" id="savedNameButton">Use Saved Name</a> -->
-                <select id="ddlViewByEmail" class="btn myRadio selecto mb-3 previewSwap" aria-label=".form-select-lg example" onchange="onChangeEmail()">
+                <select id="ddlViewByEmail" class="btn myRadio selecto mb-3 previewSwap unpress" aria-label=".form-select-lg example" onchange="onChangeEmail()" onclick="this.blur()">
                   <option selected>Use Saved Info</option>
                   <%if(userInfo.name) {%> 
                     <option value="<%=userInfo.name%>">Name</option>
@@ -287,16 +288,16 @@
               </div>
             <%}%>
             <div class="justifyControls">
-              <a href="#/" class="btn myRadio primary-text previewSwap" id="emailLeft">Left</a>
-              <a href="#/" class="btn myRadio primary-text previewSwap" id="emailCenter">Center</a>
-              <a href="#/" class="btn myRadio primary-text previewSwap" id="emailRight">Right</a>
+              <a href="#/" class="btn myRadio primary-text previewSwap unpress" id="emailLeft" onclick="this.blur()">Left</a>
+              <a href="#/" class="btn myRadio primary-text previewSwap unpress" id="emailCenter" onclick="this.blur()">Center</a>
+              <a href="#/" class="btn myRadio primary-text previewSwap unpress" id="emailRight" onclick="this.blur()">Right</a>
             </div>
           </div>
           
 
           
 
-          <a href="#/" class="btn box myRadio selecto mb-3 previewSwap" id="preview"><bold>Preview</bold></a>
+          <a href="#/" class="btn box myRadio selecto mb-3 previewSwap unpress" id="preview" onclick="this.blur()"><bold>Preview</bold></a>
         </form>
         <div id="shareDiv" class="box">
           <div class="form-check form-switch">
@@ -313,9 +314,9 @@
         <!-- <a href="#/" class="btn myRadio primary-text previewSwap box btnCorrecto" id="downloadLowRes">Download Low Res.</a>
         <a href="#/" class="btn myRadio primary-text previewSwap box btnCorrecto" id="downloadHighRes">Download High Res.</a> -->
 
-        <button type="button" class="btn myRadio primary-text previewSwap box btnCorrecto z90" id="downloadLowRes" type="button">Download Low Res.</button>
-        <button type="button" class="btn myRadio primary-text previewSwap box btnCorrecto z90" id="downloadHighRes" type="button">Download High Res.</button>
-        <button type="button" class="btn myRadio primary-text previewSwap box btnCorrecto z90" id="saveKairde" type="button">Save to My Account</button>
+        <button type="button" class="btn myRadio primary-text previewSwap box btnCorrecto z90 unpress" id="downloadLowRes" type="button" onclick="this.blur()">Download Low Res.</button>
+        <button type="button" class="btn myRadio primary-text previewSwap box btnCorrecto z90 unpress" id="downloadHighRes" type="button" onclick="this.blur()">Download High Res.</button>
+        <button type="button" class="btn myRadio primary-text previewSwap box btnCorrecto z90 unpress" id="saveKairde" type="button" onclick="this.blur()">Save to My Account</button>
         <!-- </form> -->
       </div>
     </div>
