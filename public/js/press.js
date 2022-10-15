@@ -1,6 +1,8 @@
 //handle unpress simulate animation
-alert('connected')
-const elements = document.querySelectorAll('.unpress')
+// alert('connected')
+if (!elements) { 
+  const elements = document.querySelectorAll('.unpress')
+}
 const dummy = document.getElementById('dummy')
 Array.from(elements).forEach(function(ele) {
   ele.addEventListener('click', () => {
