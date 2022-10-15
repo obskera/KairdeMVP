@@ -64,8 +64,9 @@ const dummy = document.getElementById('dummy')
 Array.from(elements).forEach(function(ele) {
   ele.addEventListener('click', () => {
     setTimeout(() => {
-      ele.style.color = 'white !important'
-      console.log('success!', dummy)
+
+      ele.style.color = 'white'
+      console.log('success!', ele)
     }, 500)
   })
 });
