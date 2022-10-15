@@ -57,3 +57,14 @@ const emailFielder = document.getElementById('email')
 nameFielder.addEventListener('change', () => {
   renderPreview(false)
 })
+
+//new button test
+const elements = document.querySelectorAll('.unpress')
+Array.from(elements).forEach(function(ele) {
+  ele.addEventListener('click', () => {
+    setTimeout(() => {
+      console.log('success!')
+      ele.blur()
+    }, 100)
+  })
+});
