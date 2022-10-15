@@ -59,14 +59,14 @@ nameFielder.addEventListener('change', () => {
 })
 
 //HANDLE CLICKS ON MOBILE TO ENSURE NO STICKY BUTTONS
-const elements = document.querySelectorAll('.unpress')
-const dummy = document.getElementById('dummy')
-Array.from(elements).forEach(function(ele) {
-  ele.addEventListener('click', () => {
-    ele.style.color = 'black'
-    setTimeout(() => {
-      ele.style.color = 'white'
-      // console.log('success!', ele)
-    }, 200)
-  })
-});
+// const elements = document.querySelectorAll('.unpress')
+// const dummy = document.getElementById('dummy')
+// Array.from(elements).forEach(function(ele) {
+//   ele.addEventListener('click', () => {
+//     ele.style.color = 'black'
+//     setTimeout(() => {
+//       ele.style.color = 'white'
+//       // console.log('success!', ele)
+//     }, 200)
+//   })
+// });
