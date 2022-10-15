@@ -58,7 +58,7 @@ nameFielder.addEventListener('change', () => {
   renderPreview(false)
 })
 
-//new button test
+//HANDLE CLICKS ON MOBILE TO ENSURE NO STICKY BUTTONS
 const elements = document.querySelectorAll('.unpress')
 const dummy = document.getElementById('dummy')
 Array.from(elements).forEach(function(ele) {
@@ -66,7 +66,7 @@ Array.from(elements).forEach(function(ele) {
     ele.style.color = 'black'
     setTimeout(() => {
       ele.style.color = 'white'
-      console.log('success!', ele)
+      // console.log('success!', ele)
     }, 200)
   })
 });
